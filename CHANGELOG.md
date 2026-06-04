@@ -41,13 +41,13 @@ Add 04_station-architecture/ — 4-channel TESLA pattern, Red/Blue rooms.
 **COMMIT 9** — June 4, 2026
 Add 05_outreach/ — VELA protocol, outreach checklists.
 
-**COMMIT 10** — June 4, 2026
+**COMMIT 11a** — June 4, 2026
 Add 06_client-framework/ — retainer structure, phase model, intake.
 
-**COMMIT 11** — June 4, 2026
+**COMMIT 12a** — June 4, 2026
 Add 07_resonance-logs/ — human signal layer documentation.
 
-**COMMIT 12** — June 4, 2026
+**COMMIT 13a** — June 4, 2026
 Add 08_ancient-humanity/ — attachment theory foundations.
 
 ---
