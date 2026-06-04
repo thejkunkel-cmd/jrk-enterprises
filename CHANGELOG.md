@@ -95,3 +95,7 @@ Add 08_ancient-humanity/index.md — folder document index and cross-reference m
 ---
 
 *PROVISIONAL. This log grows with the repo.*
+
+
+**COMMIT 25a** — June 4, 2026
+Update PROVENANCE.md — document 08_ancient-humanity completion and full attribution milestone.
