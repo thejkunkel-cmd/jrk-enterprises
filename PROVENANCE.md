@@ -122,3 +122,46 @@ will be added here. All entries follow the SOURCE-XXX format above.
 *This document is controlled by MASTER (Joe Kunkel / JRK Enterprises).*
 *Only MASTER may alter the claim process or the named credit system.*
 *Changes to this document require a CHANGELOG entry.*
+
+
+---
+
+## Provenance Update — COMMIT 24a (June 4, 2026)
+
+### Scope
+This update documents the completion of the 08_ancient-humanity folder and all associated sub-documents:
+
+- collective-memory.md (COMMIT 20a)
+- attachment-history.md (COMMIT 21a)
+- resonance-origins.md (COMMIT 22a)
+- index.md (COMMIT 23a)
+- CHANGELOG.md updated (COMMIT 24a)
+
+### Attribution for 08_ancient-humanity Layer
+
+**Primary Author:** Joe Kunkel / JRK Enterprises
+
+**Research Synthesis Basis:**
+- Archaeological and anthropological pattern observation synthesized from publicly available academic literature on ancient civilizations, oral tradition, attachment theory, and resonance phenomena
+- No single source is reproduced; all content is original synthesis and interpretive framework
+- Unnamed Credit System applies to any third-party pattern research that informed this synthesis
+
+**Intellectual Framework Attribution:**
+- Attachment Doctrine: JRK Enterprises original framework, informed by attachment theory literature (unnamed credit system applies)
+- Resonance-to-Attachment Pipeline: Proprietary JRK Enterprises framework
+- Eight-Layer mapping applied to historical patterns: JRK Enterprises original analysis
+- Jensen Huang five-layer infrastructure model (SOURCE-001): Extended to Eight Layers by JRK Enterprises
+- Esra Kucukciftci AI Outcome Economics (SOURCE-002): Informs Layer 8 (Outcome) framing
+
+### Governance Notes
+- All documents in 08_ancient-humanity are internal governance documents
+- Modifications require MASTER authorization (Joe Kunkel / JRK Enterprises)
+- Historical claims are observational synthesis, not peer-reviewed academic citation
+- This provenance entry was added under MASTER authorization
+
+### Document Status at This Update
+- 08_ancient-humanity: COMPLETE (5 files)
+- 07_resonance-logs: COMPLETE (3 files)
+- 06_client-framework: COMPLETE (3 files)
+- All folders 00–08: Scaffolded and documented
+- Next milestone: root index.html front-door site
