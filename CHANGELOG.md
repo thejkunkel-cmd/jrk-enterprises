@@ -50,6 +50,36 @@ Add 07_resonance-logs/ — human signal layer documentation.
 **COMMIT 13a** — June 4, 2026
 Add 08_ancient-humanity/ — attachment theory foundations.
 
+**COMMIT 14a** — June 4, 2026
+Add 06_client-framework/intake-protocol.md — client intake and discovery protocol.
+
+**COMMIT 15a** — June 4, 2026
+Add 06_client-framework/assessment-template.md — eight-layer readiness assessment.
+
+**COMMIT 16a** — June 4, 2026
+Add 06_client-framework/contract-framework.md — governance-aligned engagement contract.
+
+**COMMIT 17a** — June 4, 2026
+Add 07_resonance-logs/log-template.md — resonance log entry template.
+
+**COMMIT 18a** — June 4, 2026
+Add 07_resonance-logs/index.md — resonance log system index.
+
+**COMMIT 19a** — June 4, 2026
+Add 07_resonance-logs/README.md — resonance logs folder overview.
+
+**COMMIT 20a** — June 4, 2026
+Add 08_ancient-humanity/collective-memory.md — collective memory encoding systems.
+
+**COMMIT 21a** — June 4, 2026
+Add 08_ancient-humanity/attachment-history.md — eight attachment patterns across civilizations.
+
+**COMMIT 22a** — June 4, 2026
+Add 08_ancient-humanity/resonance-origins.md — origins of resonance as organizational tool.
+
+**COMMIT 23a** — June 4, 2026
+Add 08_ancient-humanity/index.md — folder document index and cross-reference map.
+
 ---
 
 ## Rules for This File
