@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JRK Enterprises — Joe Kunkel</title>
+<meta name="description" content="AI Governance, Operator Framework Development, and AI-Human Literacy. Real questions deserve real answers. Putnam, Connecticut.">
+<meta property="og:title" content="JRK Enterprises — Joe Kunkel">
+<meta property="og:description" content="Real questions deserve real answers. No emergency required. You'll know when you need it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:   #0a0908;
+  --dark:    #111010;
+  --surface: #181614;
+  --card:    #1e1b18;
+  --border:  #2e2a25;
+  --gold:    #c8960a;
+  --gold-lt: #e4b430;
+  --green:   #2d6b3a;
+  --green-lt:#3d8f50;
+  --cream:   #e8e0d0;
+  --muted:   #9a9182;
+  --faint:   #4a4540;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Work Sans', 'Helvetica Neue', sans-serif;
+
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.2vw,  0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.3vw,  1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.7vw,  1.5rem);
+  --text-xl:   clamp(1.5rem,   1.1rem  + 1.2vw,  2.25rem);
+  --text-2xl:  clamp(2rem,     1rem    + 2.5vw,  3.75rem);
+  --text-hero: clamp(2.5rem,   0.5rem  + 5.5vw,  6rem);
+
+  --sp2: 0.5rem; --sp3: 0.75rem; --sp4: 1rem; --sp5: 1.25rem;
+  --sp6: 1.5rem; --sp8: 2rem;   --sp10: 2.5rem; --sp12: 3rem;
+  --sp16: 4rem;  --sp20: 5rem;  --sp24: 6rem;
+
+  --r-sm: 0.375rem; --r-md: 0.5rem; --r-lg: 0.75rem; --r-xl: 1rem;
+  --ease: 200ms cubic-bezier(0.16,1,0.3,1);
+  --content: 900px; --wide: 1160px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;font-size:16px}
+body{
+  min-height:100dvh; background:var(--black);
+  color:var(--cream); font-family:var(--font-body);
+  font-size:var(--text-base); line-height:1.65;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none;transition:color var(--ease)}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;line-height:1.15}
+p{text-wrap:pretty}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:var(--r-sm)}
+
+body::before{
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:0.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size:128px;
+}
+
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:var(--sp4) var(--sp8);
+  background:color-mix(in oklab, var(--black) 88%, transparent);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  display:flex; align-items:center; gap:var(--sp3);
+  font-family:var(--font-display); font-size:var(--text-base);
+  font-style:italic; color:var(--cream); letter-spacing:0.01em;
+}
+.nav-logo svg{flex-shrink:0}
+.nav-chapters{display:flex;align-items:center;gap:var(--sp6)}
+.nav-chapters a{
+  font-size:var(--text-xs); font-weight:500; color:var(--muted);
+  letter-spacing:0.06em; text-transform:uppercase;
+  transition:color var(--ease);
+}
+.nav-chapters a:hover{color:var(--gold)}
+.nav-chapters a span{color:var(--faint);margin-right:4px}
+
+.hero{
+  min-height:100dvh; display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center; gap:var(--sp12);
+  padding:calc(var(--sp20) + 60px) var(--sp8) var(--sp20);
+  max-width:var(--wide); margin-inline:auto;
+  position:relative; z-index:1;
+}
+.hero-text{display:flex;flex-direction:column;gap:var(--sp6)}
+.hero-chapter{
+  font-family:var(--font-body); font-size:var(--text-xs); font-weight:600;
+  letter-spacing:0.14em; text-transform:uppercase; color:var(--gold);
+}
+.hero h1{
+  font-size:var(--text-hero); font-weight:400; color:var(--cream);
+  letter-spacing:-0.02em; line-height:1.05;
+}
+.hero h1 em{font-style:italic; color:var(--gold)}
+.hero-taglines{display:flex;flex-direction:column;gap:var(--sp2);margin-top:var(--sp2)}
+.hero-taglines p{
+  font-size:var(--text-lg); color:var(--muted); font-weight:300;
+  line-height:1.4; border-left:2px solid var(--green); padding-left:var(--sp4);
+}
+.hero-taglines p:last-child{color:var(--faint); font-size:var(--text-base)}
+.hero-cta{display:flex;gap:var(--sp4);flex-wrap:wrap;margin-top:var(--sp4)}
+.btn-gold{
+  display:inline-flex;align-items:center;gap:var(--sp2);
+  padding:var(--sp3) var(--sp6); border-radius:var(--r-lg);
+  background:var(--gold); color:var(--black);
+  font-size:var(--text-sm); font-weight:700; font-family:var(--font-body);
+  letter-spacing:0.02em; transition:background var(--ease);
+}
+.btn-gold:hover{background:var(--gold-lt)}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:var(--sp2);
+  padding:var(--sp3) var(--sp6); border-radius:var(--r-lg);
+  border:1px solid var(--border); color:var(--muted);
+  font-size:var(--text-sm); font-weight:500; font-family:var(--font-body);
+  transition:all var(--ease);
+}
+.btn-outline:hover{color:var(--cream);border-color:var(--muted)}
+
+.hero-illustration{
+  position:relative; display:flex; align-items:center; justify-content:center;
+}
+.hero-illustration .img-frame{
+  border-radius:var(--r-xl); overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:0 24px 64px oklch(0 0 0 / 0.6);
+  position:relative;
+}
+.hero-illustration img{
+  width:100%; height:auto; display:block;
+  border-radius:var(--r-xl);
+}
+.hero-illustration .img-badge{
+  position:absolute; bottom:var(--sp4); left:var(--sp4);
+  background:color-mix(in oklab, var(--black) 80%, transparent);
+  backdrop-filter:blur(8px);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:var(--sp2) var(--sp4);
+  font-size:var(--text-xs); color:var(--muted); font-family:var(--font-body);
+}
+.hero-illustration .img-badge strong{color:var(--gold);display:block;font-weight:600}
+
+.rule{height:1px;background:var(--border);border:none;position:relative;z-index:1;}
+.rule-gold{height:1px;border:none;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.35;}
+
+.chapter{
+  padding:clamp(var(--sp16),8vw,var(--sp24)) var(--sp8);
+  position:relative; z-index:1;
+}
+.chapter-inner{max-width:var(--content);margin-inline:auto}
+.chapter-wide{max-width:var(--wide);margin-inline:auto}
+
+.chapter-header{
+  display:flex; align-items:baseline; gap:var(--sp6);
+  margin-bottom:var(--sp12);
+}
+.ch-num{
+  font-family:var(--font-display); font-size:var(--text-2xl);
+  color:var(--faint); font-style:italic; line-height:1; flex-shrink:0;
+  min-width:3ch;
+}
+.ch-divider{flex:1;height:1px;background:var(--border)}
+.ch-label{
+  font-family:var(--font-body); font-size:var(--text-xs); font-weight:600;
+  letter-spacing:0.12em; text-transform:uppercase; color:var(--gold);
+  flex-shrink:0;
+}
+
+.ch-title{
+  font-size:var(--text-2xl); font-weight:400; font-style:italic;
+  color:var(--cream); letter-spacing:-0.02em; margin-bottom:var(--sp6);
+}
+.ch-body{
+  font-size:var(--text-base); color:var(--muted); line-height:1.75;
+  max-width:62ch;
+}
+
+.ch-bg{background:var(--surface)}
+.ch-bg2{background:var(--card)}
+
+.argument-list{list-style:none;margin-top:var(--sp10)}
+.argument-list li{
+  display:grid; grid-template-columns:4ch 1fr;
+  gap:var(--sp6); padding:var(--sp6) 0;
+  border-bottom:1px solid var(--border);
+}
+.argument-list li:last-child{border-bottom:none}
+.arg-n{
+  font-family:var(--font-display); font-style:italic;
+  font-size:var(--text-xl); color:var(--faint); padding-top:2px; line-height:1.1;
+}
+.arg-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
+.arg-body strong{color:var(--cream);font-weight:600;display:block;margin-bottom:var(--sp2)}
+
+.fw-grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:var(--sp4); margin-top:var(--sp10);
+}
+.fw-card{
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r-lg); padding:var(--sp6);
+  transition:border-color var(--ease), box-shadow var(--ease);
+}
+.fw-card:hover{
+  border-color:color-mix(in oklab,var(--gold) 40%,var(--border));
+  box-shadow:0 8px 24px oklch(0 0 0 / 0.4);
+}
+.fw-n{
+  font-family:var(--font-display); font-size:var(--text-xl);
+  color:var(--faint); font-style:italic; line-height:1; margin-bottom:var(--sp4);
+}
+.fw-title{
+  font-size:var(--text-sm); font-weight:600; color:var(--cream);
+  font-family:var(--font-body); margin-bottom:var(--sp2); letter-spacing:0.01em;
+}
+.fw-desc{font-size:var(--text-sm);color:var(--muted);line-height:1.6}
+
+.pull-quote{
+  border-left:3px solid var(--gold); padding:var(--sp6) var(--sp8);
+  margin:var(--sp12) 0;
+  background:color-mix(in oklab,var(--gold) 4%,var(--surface));
+  border-radius:0 var(--r-md) var(--r-md) 0;
+}
+.pull-quote blockquote{
+  font-family:var(--font-display); font-size:var(--text-xl);
+  font-style:italic; color:var(--cream); line-height:1.3; letter-spacing:-0.01em;
+}
+.pull-quote cite{
+  display:block; margin-top:var(--sp4); font-size:var(--text-xs);
+  color:var(--muted); font-style:normal; font-family:var(--font-body);
+  letter-spacing:0.06em; text-transform:uppercase;
+}
+
+.about-grid{
+  display:grid; grid-template-columns:1fr 2fr;
+  gap:var(--sp16); align-items:start; margin-top:var(--sp10);
+}
+.about-logo-wrap{
+  position:sticky; top:calc(60px + var(--sp8));
+  display:flex; flex-direction:column; align-items:center; gap:var(--sp6);
+}
+.about-logo-wrap img{
+  width:100%; max-width:260px; border-radius:var(--r-xl);
+  border:1px solid var(--border);
+  box-shadow:0 16px 48px oklch(0 0 0 / 0.5);
+}
+.services-list{list-style:none;display:flex;flex-direction:column;gap:var(--sp3);margin-top:var(--sp8)}
+.services-list li{
+  display:flex; align-items:flex-start; gap:var(--sp4);
+  font-size:var(--text-base); color:var(--muted); line-height:1.55;
+}
+.services-list li::before{
+  content:'→'; color:var(--green-lt); font-size:var(--text-sm);
+  margin-top:0.15em; flex-shrink:0;
+}
+.rate-note{
+  margin-top:var(--sp8); padding:var(--sp5) var(--sp6);
+  background:color-mix(in oklab,var(--green) 10%,var(--card));
+  border:1px solid color-mix(in oklab,var(--green) 30%,var(--border));
+  border-radius:var(--r-lg);
+  font-size:var(--text-sm); color:var(--muted); line-height:1.6;
+}
+.rate-note strong{color:var(--green-lt)}
+
+.contact-links{display:flex;flex-direction:column;gap:var(--sp3);margin-top:var(--sp8)}
+.c-link{
+  display:flex; align-items:center; gap:var(--sp5);
+  padding:var(--sp4) var(--sp5);
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  font-size:var(--text-sm); color:var(--muted);
+  transition:all var(--ease);
+}
+.c-link:hover{color:var(--cream);border-color:var(--gold);box-shadow:0 4px 16px oklch(0 0 0 / 0.3)}
+.c-icon{width:20px;height:20px;color:var(--gold);flex-shrink:0}
+.c-note{
+  margin-top:var(--sp6); font-size:var(--text-sm); color:var(--faint);
+  font-style:italic; font-family:var(--font-display); line-height:1.6;
+}
+
+footer{
+  padding:var(--sp8); text-align:center;
+  border-top:1px solid var(--border); position:relative; z-index:1;
+}
+footer p{font-size:var(--text-xs);color:var(--faint);line-height:1.8}
+footer strong{color:var(--muted);font-weight:500}
+
+@media(max-width:768px){
+  .nav{padding:var(--sp3) var(--sp4)}
+  .nav-chapters{gap:var(--sp4)}
+  .nav-chapters a{display:none}
+  .nav-chapters a:last-child{display:flex}
+  .hero{grid-template-columns:1fr;gap:var(--sp8);padding-top:calc(var(--sp16)+60px)}
+  .hero-illustration{order:-1}
+  .about-grid{grid-template-columns:1fr}
+  .about-logo-wrap{position:static;flex-direction:row;justify-content:flex-start;align-items:center}
+  .about-logo-wrap img{max-width:120px}
+  .chapter{padding:var(--sp12) var(--sp4)}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-label="JRK logo">
+      <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#c8960a" stroke-width="1" fill="none" opacity="0.6"/>
+      <circle cx="16" cy="2"  r="2" fill="#c8960a"/>
+      <circle cx="28" cy="9"  r="2" fill="#c8960a" opacity="0.7"/>
+      <circle cx="28" cy="23" r="2" fill="#3d8f50" opacity="0.7"/>
+      <circle cx="16" cy="30" r="2" fill="#c8960a"/>
+      <circle cx="4"  cy="23" r="2" fill="#3d8f50" opacity="0.7"/>
+      <circle cx="4"  cy="9"  r="2" fill="#c8960a" opacity="0.7"/>
+      <text x="16" y="20" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-style="italic" font-weight="700" fill="url(#grd)">JRK</text>
+      <defs>
+        <linearGradient id="grd" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#3d8f50"/>
+          <stop offset="100%" stop-color="#c8960a"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    JRK Enterprises
+  </div>
+  <nav class="nav-chapters" aria-label="Chapters">
+    <a href="#about"><span>§1</span> About</a>
+    <a href="#framework"><span>§2</span> Framework</a>
+    <a href="#argument"><span>§3</span> Argument</a>
+    <a href="#contact"><span>§4</span> Contact</a>
+  </nav>
+</nav>
+
+<section class="hero" aria-label="Introduction">
+  <div class="hero-text">
+    <p class="hero-chapter">prJeKt: humAnIty · June 2026</p>
+    <h1>Real questions deserve <em>real answers.</em></h1>
+    <div class="hero-taglines">
+      <p>No emergency required.</p>
+      <p>You'll know when you need it.</p>
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-gold">Get in touch →</a>
+      <a href="#argument" class="btn-outline">Read the argument</a>
+    </div>
+  </div>
+  <div class="hero-illustration">
+    <div class="img-frame">
+      <img
+        src="Cup-of-Joe-with-Joe.jpg"
+        alt="Joe Kunkel — JRK Enterprises, AI consultant and founder, Putnam Connecticut"
+        width="600" height="700" loading="eager"
+        style="object-fit:cover"
+        onerror="this.src='https://picsum.photos/seed/jrk-joe/600/700'"
+      />
+      <div class="img-badge">
+        <strong>Joe Kunkel</strong>
+        Putnam, Connecticut
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule-gold">
+
+<section class="chapter ch-bg" id="about">
+  <div class="chapter-wide">
+    <div class="chapter-header">
+      <span class="ch-num">§1</span>
+      <span class="ch-divider"></span>
+      <span class="ch-label">About</span>
+    </div>
+    <div class="about-grid">
+      <div class="about-logo-wrap">
+        <img
+          src="JRK_card-Logo.jpg"
+          alt="JRK Enterprises logo — constellation hexagon, gold and green"
+          width="300" height="300" loading="lazy"
+          onerror="this.src='https://picsum.photos/seed/jrk-logo/300/300'"
+        />
+        <p style="font-size:var(--text-xs);color:var(--faint);text-align:center;letter-spacing:0.06em;text-transform:uppercase">AI Governance &<br>Operator Framework</p>
+      </div>
+      <div>
+        <h2 class="ch-title">Grassroots AI — built for the people who never got an onboarding.</h2>
+        <p class="ch-body">I help nontechnical people, small businesses, and local organizations use AI in plain language. No jargon. No tech team required. If implementation goes beyond my scope, I'll find the right people for you — and I won't charge you to figure that out.</p>
+        <p class="ch-body" style="margin-top:1rem">Special rates for nonprofits, community organizations, and kids' centers — because that's where better systems matter most.</p>
+        <ul class="services-list">
+          <li>Quiet, judgment-free "ask anything" AI sessions</li>
+          <li>Mapping messy processes into simple checklists and docs</li>
+          <li>AI-assisted workflow design that makes daily work easier</li>
+          <li>Short trainings so your staff can actually use the tools they already have</li>
+          <li>AI governance framework development for organizations entering the space</li>
+        </ul>
+        <div class="rate-note">
+          <strong>Plain Language. Clear Thinking. Better Work.</strong><br>
+          Consulting runs on relationship, not retainer. One conversation tells both of us what we need to know.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="chapter" id="framework">
+  <div class="chapter-wide">
+    <div class="chapter-header">
+      <span class="ch-num">§2</span>
+      <span class="ch-divider"></span>
+      <span class="ch-label">The Framework</span>
+    </div>
+    <h2 class="ch-title">Eight layers. One thesis. The onramp enterprise AI forgot to build.</h2>
+    <p class="ch-body">A governance and operator onboarding architecture designed to close the educational exclusivity gap — deployable across any platform's installed base without requiring institutional fluency first.</p>
+
+    <div class="pull-quote">
+      <blockquote>"Copilot is built for the people who already don't need it."</blockquote>
+      <cite>— Educational Exclusivity Argument · Joe Kunkel, JRK Enterprises · June 2026</cite>
+    </div>
+
+    <div class="fw-grid">
+      <div class="fw-card"><div class="fw-n">01</div><div class="fw-title">Human-Centered Entry</div><div class="fw-desc">No prior AI fluency required. Meets users where they are — not where the enterprise contract assumes they should be.</div></div>
+      <div class="fw-card"><div class="fw-n">02</div><div class="fw-title">Operator Certification Architecture</div><div class="fw-desc">Certified operator-led onboarding through professional trust networks. Not IT deployment. Not a procurement queue.</div></div>
+      <div class="fw-card"><div class="fw-n">03</div><div class="fw-title">Eight-Layer Governance Stack</div><div class="fw-desc">AI-human partnership governance across all eight layers — compliance-first without sacrificing human accountability at the edge.</div></div>
+      <div class="fw-card"><div class="fw-n">04</div><div class="fw-title">Residual Revenue Architecture</div><div class="fw-desc">Per-referral royalty and ongoing residual payment structure. Every operator that goes out through the system generates traceable return.</div></div>
+      <div class="fw-card"><div class="fw-n">05</div><div class="fw-title">Trust-First Distribution</div><div class="fw-desc">Reaches the 446M seat holders no enterprise procurement touches — through contractors and consultants who already hold their trust.</div></div>
+      <div class="fw-card"><div class="fw-n">06</div><div class="fw-title">Path Dependence Correction</div><div class="fw-desc">Intervention before bad KPI defaults harden. Built to run ahead of the wrong model before it embeds in 500,000 workflows.</div></div>
+      <div class="fw-card"><div class="fw-n">07</div><div class="fw-title">Nonprofit & Public Sector Ready</div><div class="fw-desc">Designed from the ground up for veteran-friendly and nonprofit deployment — human-centered defaults, no extractive sales behavior.</div></div>
+      <div class="fw-card"><div class="fw-n">08</div><div class="fw-title">Media & IP Downstream</div><div class="fw-desc">Licensing revenue seeds the next layer: AI network television, AI online news, and a full media company built around truth.</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="chapter ch-bg2" id="argument">
+  <div class="chapter-inner">
+    <div class="chapter-header">
+      <span class="ch-num">§3</span>
+      <span class="ch-divider"></span>
+      <span class="ch-label">The Argument</span>
+    </div>
+    <h2 class="ch-title">Why Microsoft cannot fix the problem it created.</h2>
+    <p class="ch-body">The Educational Exclusivity Argument — five threads on why the biggest AI investment in enterprise history is optimally accessible to the population that least needs it.</p>
+    <ul class="argument-list">
+      <li>
+        <span class="arg-n">I</span>
+        <span class="arg-body"><strong>Educational exclusivity is invisible by design.</strong> It gets labeled a "learning curve" — which transfers the institutional failure onto the individual user and frames their struggle as a personal deficit rather than a product failure.</span>
+      </li>
+      <li>
+        <span class="arg-n">II</span>
+        <span class="arg-body"><strong>Microsoft cannot rebuild from the human center outward.</strong> Every simplification threatens the expertise economy that 500,000 channel partners are built on. It is not a design problem. It is a structural incentive problem.</span>
+      </li>
+      <li>
+        <span class="arg-n">III</span>
+        <span class="arg-body"><strong>Copilot accelerated the problem, not the solution.</strong> It added AI prompting fluency on top of three prior layers of required institutional training. The most powerful AI product reaches only the population that least needs it.</span>
+      </li>
+      <li>
+        <span class="arg-n">IV</span>
+        <span class="arg-body"><strong>The Apollo/Perplexity integration confirms the risk.</strong> When a research engine absorbs sales automation, it inherits sales automation's incentives — speed, volume, conversion — without inheriting the trust architecture that makes a research product credible.</span>
+      </li>
+      <li>
+        <span class="arg-n">V</span>
+        <span class="arg-body"><strong>The Operator Framework is the intervention.</strong> Not a Copilot replacement. The onramp Copilot was never designed to build — and the governance layer that requires acknowledging the human at the center, not the enterprise contract at the top.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr class="rule-gold">
+
+<section class="chapter" id="contact">
+  <div class="chapter-inner">
+    <div class="chapter-header">
+      <span class="ch-num">§4</span>
+      <span class="ch-divider"></span>
+      <span class="ch-label">Contact</span>
+    </div>
+    <h2 class="ch-title">One conversation. No pitch deck.</h2>
+    <p class="ch-body">The exec summary and NDA travel after the first response. If you're an attorney, a platform, or a serious operator — one email is enough to start.</p>
+    <p class="ch-body" style="margin-top:0.5rem">Located in Putnam, Connecticut. Available nationally.</p>
+    <div class="contact-links">
+      <a href="mailto:Joe.Kunkel@proton.me" class="c-link" target="_blank" rel="noopener noreferrer">
+        <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        Joe.Kunkel@proton.me
+      </a>
+      <a href="tel:7192718905" class="c-link">
+        <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (719) 271-8905
+      </a>
+      <a href="https://www.linkedin.com/in/joekunkel401/" class="c-link" target="_blank" rel="noopener noreferrer">
+        <svg class="c-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/joekunkel401
+      </a>
+    </div>
+    <p class="c-note">"When the going gets weird, the weird turn pro."<br>— Hunter S. Thompson</p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>JRK Enterprises</strong> · Joe Kunkel · Putnam, Connecticut · AI Governance &amp; Operator Framework Development</p>
+  <p>© 2026 · <em>Everything is connected.</em> · Attribution: Eight-layer governance stack applies and extends the economic framework published by Esra Kucukciftci (LinkedIn, 2025).</p>
+</footer>
+
+</body>
+</html>
