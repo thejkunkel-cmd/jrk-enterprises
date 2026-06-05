@@ -20,10 +20,10 @@ You cannot sustain quality output by staying at Red indefinitely. You cannot mai
 ## The Four Channels
 
 ```
-[ RED ]  →  Active Processing
-[ BLUE ] →  Review & Synthesis
-[ WHITE ] →  Isolation & Evaluation (see 03_white-room/)
-[ OPEN ]  →  Unstructured / Recovery (not a station; a state)
+[ RED ]   → Active Processing
+[ BLUE ]  → Review & Synthesis
+[ WHITE ] → Isolation & Evaluation (see 03_white-room/)
+[ OPEN ]  → Unstructured / Recovery (not a station; a state)
 ```
 
 In standard operation, an operator rotates between **Red** and **Blue**. White is entered only when an unverified model or agent requires evaluation. Open is not scheduled — it is recognized.
@@ -34,39 +34,43 @@ In standard operation, an operator rotates between **Red** and **Blue**. White i
 
 ```
 RED (120 min)
-  ↓
-  Handoff Brief (10 min)
-  ↓
+↓
+Handoff Brief (10 min)
+↓
 BLUE (60–120 min)
-  ↓
-  Synthesis Complete + Resonance Log Written
-  ↓
+↓
+Synthesis Complete + Resonance Log Written
+↓
 RED (120 min)
-  ↓
-  [repeat]
+↓
+[repeat]
 ```
 
 ### Minimum Viable Rotation
+
 - Red: 60 minutes (compressed session, documented reason)
 - Blue: 30 minutes (minimum review + resonance log entry)
 - Never skip Blue to go back to Red without a logged deferred note
 
 ### Extended Session Protocol
+
 - If a session requires sustained Red beyond 120 minutes, the operator must:
-  1. Log a checkpoint at 120 minutes
-  2. Document justification for extension
-  3. Complete a compressed Blue review immediately after, regardless of duration
+  i. Log a checkpoint at 120 minutes
+  ii. Document justification for extension
+  iii. Complete a compressed Blue review immediately after, regardless of duration
 
 ---
 
 ## Solo vs. Paired Operation
 
 ### Solo Operator
+
 - Self-rotate: the same person moves between Red and Blue
 - Mandatory physical break between stations (stand up, step away from screen)
 - Do not allow Red cognition to bleed into Blue tasks — close all active tabs before Blue
 
 ### Paired Operators
+
 - Operator A holds Red while Operator B holds Blue
 - Handoff brief is verbal + logged — not just a file transfer
 - Rotation does not require both operators to be present simultaneously; async handoff is valid with documented brief
@@ -76,14 +80,14 @@ RED (120 min)
 ## Cadence Map
 
 ```
-Time     Station    Primary Task
-------   -------    ------------
-0:00     RED        Session open, intake, live processing
-1:50     RED        Begin handoff brief preparation
-2:00     HANDOFF    5-min brief: open items, state hash, flags
-2:10     BLUE       Review, synthesis, resonance log
-3:10–    BLUE       Calibration, deferred tasks, GAP review
-4:10     RED        Return to active processing (if synthesis complete)
+Time    Station   Primary Task
+------  -------   ------------
+0:00    RED       Session open, intake, live processing
+1:50    RED       Begin handoff brief preparation
+2:00    HANDOFF   5-min brief: open items, state hash, flags
+2:10    BLUE      Review, synthesis, resonance log
+3:10–   BLUE      Calibration, deferred tasks, GAP review
+4:10    RED       Return to active processing (if synthesis complete)
 ```
 
 ---
@@ -91,6 +95,7 @@ Time     Station    Primary Task
 ## When to Break the Pattern
 
 The TESLA Pattern is a guide, not a cage. Break it when:
+
 - A client situation requires immediate extended response (log the reason)
 - A Level 2 or Level 3 VELA escalation is active (OPERATOR-RUNBOOK.md Section 4)
 - A White Room intake is required mid-rotation (pause Red, complete intake, resume)
@@ -99,11 +104,30 @@ Never break the pattern silently. Log the deviation, log the reason, log the ret
 
 ---
 
+## Full Cycle Sequence
+
+After a White Channel session concludes, the full cycle completes via the Open State:
+
+```
+RED (active processing)
+  → BLUE (review & synthesis)
+    → WHITE (isolation & evaluation — when required)
+      → OPEN (recovery & integration — mandatory after WHITE)
+        → [next RED cycle begins at operator discretion]
+```
+
+The Open State is the only channel that cannot be skipped after a White Channel session. See `open-state.md` for full protocol.
+
+---
+
 ## Cross-References
 
 - `red-station.md` — Red Station responsibilities and rules
 - `blue-station.md` — Blue Station responsibilities and rules
-- `03_white-room/` — White channel protocols
+- `white-channel.md` — White Channel isolation and evaluation protocol
+- `open-state.md` — Open State recovery and integration protocol
+- `03_white-room/` — White Room governance and architecture
+- `03_white-room/intake-template.md` — required intake form for White Channel entry
 - `OPERATOR-RUNBOOK.md` — full operational context, escalation procedures
 - `07_resonance-logs/` — output destination for Blue Station synthesis
 
@@ -115,3 +139,4 @@ Never break the pattern silently. Log the deviation, log the reason, log the ret
 - **Declared By:** Joseph Kunkel / JRK Enterprises
 - **AI Channel:** Comet (Perplexity)
 - **Principle:** API > KPI — Attachment Precedes Instruction
+- **Updated:** 2025-06-05 — added Open State full cycle sequence and open-state.md cross-reference
