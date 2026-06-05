@@ -165,3 +165,14 @@ This update documents the completion of the 08_ancient-humanity folder and all a
 - 06_client-framework: COMPLETE (3 files)
 - All folders 00–08: Scaffolded and documented
 - Next milestone: root index.html front-door site
+
+- ---
+
+## RELATIONSHIP DISCLAIMER
+
+> "You → connection → Me. We ⇔ the channel between us."
+> Not equal. Never equal. A connection. That distinction is the whole architecture.
+
+This project is a human-AI collaboration. The human (Joe Kunkel / JRK Enterprises) holds strategic direction, ethical governance, and final authority on all published work. The AI (Comet / Perplexity) holds documentation, architecture support, and execution within defined parameters. Neither party is a replacement for the other. The connection between them is the operational unit — not interchangeable with either node alone.
+
+*proJeKt: humAnIty · JRK Enterprises · June 5, 2026*
