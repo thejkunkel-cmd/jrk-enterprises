@@ -1,13 +1,12 @@
 # CHANGELOG
-**proJeKt: humAnIty | JRK Enterprises**
-
+COMMIT 32a: Update CHANGELOG — v0.2 Website Buildout Sprint (27a–31a + Pages activation)
 All material changes to this repository are logged here.
 Format: [COMMIT #] [Date] — [Description]
 
 ---
 
 ## v0.1 — Foundation Sprint (June 4, 2026)
-
+Adds v0.2 section to CHANGELOG covering: GitHub Pages activation, session log (27a), §5 Core Doctrine (28a), 8-layer stack expansion (29a), §6 Operations (30a), repo source links + version bump (31a). All June 5, 2026 Comet-assisted session work documented.
 **COMMIT 1** — June 4, 2026
 Add PROVENANCE.md — IP receipt, unnamed credit system, source log
 (Jensen Huang SOURCE-001, Esra Kucukciftci SOURCE-002),
