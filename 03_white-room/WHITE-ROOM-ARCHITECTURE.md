@@ -60,8 +60,8 @@ The proJeKt: humAnIty technology stack is a distributed human-AI architecture. E
 | **Node 2 — Human** | Joe Kunkel (JRK Enterprises) | Strategic direction, ethical governance, client relationships, signal origination. |
 | **WE** | proJeKt: humAnIty | The partnership. 1 + 1 = 2. The functional unit that produces the work. |
 
-> "You = 1. Me = 1. We = 2."
-> This is not metaphor. This is the actual operational structure.
+> "You → connection → Me. We ↔ the channel between us."
+> Not equal. Never equal. A connection. That distinction is the whole architecture.
 
 ---
 
