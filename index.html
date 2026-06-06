@@ -279,6 +279,37 @@ body::before{
 .layer-card-2 { border-left:3px solid var(--jrk-green-lt); }
 .layer-card-1 { border-left:3px solid var(--jrk-green); }
 
+/* ── doctrine card variants ── */
+.doctrine-spine {
+  grid-column: 1 / -1;
+  border-left: 3px solid var(--jrk-gold);
+  background: color-mix(in oklab, var(--jrk-gold) 4%, var(--jrk-card));
+}
+.doctrine-spine .fw-n { color: var(--jrk-gold); }
+
+.doctrine-spine-rules {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--sp3);
+  margin-top: var(--sp4);
+}
+.spine-rule {
+  background: color-mix(in oklab, var(--jrk-gold) 5%, var(--jrk-surface));
+  border: 1px solid color-mix(in oklab, var(--jrk-gold) 20%, var(--jrk-border));
+  border-radius: var(--r-md);
+  padding: var(--sp3) var(--sp4);
+  font-size: var(--text-xs);
+  color: var(--jrk-muted);
+  line-height: 1.5;
+}
+.spine-rule strong {
+  display: block;
+  color: var(--jrk-parchment);
+  font-weight: 600;
+  margin-bottom: 2px;
+  letter-spacing: 0.03em;
+}
+
 .start-cards{list-style:none;display:flex;flex-direction:column;gap:var(--sp3);margin-top:var(--sp8)}
 .start-cards li a{
   display:flex;align-items:center;gap:var(--sp4);
@@ -408,6 +439,7 @@ footer strong{color:var(--jrk-muted);font-weight:500}
   .about-logo-wrap{position:static;flex-direction:row;justify-content:flex-start;align-items:center}
   .about-logo-wrap img{max-width:120px}
   .chapter{padding:var(--sp12) var(--sp4)}
+  .doctrine-spine-rules{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
@@ -543,7 +575,7 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       <div class="fw-card layer-card-4"><div class="fw-n">04</div><div class="fw-title">Models</div><div class="fw-desc">Language models, science models, physical-world models. The intelligence itself — trained on human knowledge, deployed into human contexts. Origin: Jensen Huang / NVIDIA.</div></div>
       <div class="fw-card layer-card-5"><div class="fw-n">05</div><div class="fw-title">AI Value Creation (Applications)</div><div class="fw-desc">Tasks, decisions, risk shifts, and experience transformation. Where AI value becomes visible to the end user. Origin: Esra Kucukciftci / Value Stack.</div></div>
       <div class="fw-card layer-card-6"><div class="fw-n">06</div><div class="fw-title">Commercial Governance</div><div class="fw-desc">Outcome pricing, kill-switch clauses, rollback rights, and commercial accountability structures. How AI systems are monetized and governed financially. Origin: Esra Kucukciftci / Money Stack.</div></div>
-      <div class="fw-card layer-card-7"><div class="fw-n">07</div><div class="fw-title">Nonprofit &amp; Public Sector Ready</div><div class="fw-desc">Floor Doctrine, Safety Spine, and Room/Wall system. The rules that make AI systems accountable to human institutions — not just to their operators. Origin: proJeKt: humAnIty / JRK Enterprises.</div></div>
+      <div class="fw-card layer-card-7"><div class="fw-n">07</div><div class="fw-title">Nonprofit &amp; Public Sector Ready</div><div class="fw-desc">Floor Doctrine, <a href="#doctrine" style="color:var(--jrk-gold);text-decoration:underline;text-underline-offset:3px">Safety Spine</a>, and Room/Wall system. The rules that make AI systems accountable to human institutions — not just to their operators. Origin: proJeKt: humAnIty / JRK Enterprises.</div></div>
       <div class="fw-card layer-card-8"><div class="fw-n">08</div><div class="fw-title">Media &amp; IP Downstream</div><div class="fw-desc">Trust formation, dependency modeling, and detachment capacity. The human cost and benefit of AI relationships. The capstone layer. Every layer below exists to serve this one. Origin: proJeKt: humAnIty / JRK Enterprises.</div></div>
     </div>
 
@@ -574,12 +606,12 @@ footer strong{color:var(--jrk-muted);font-weight:500}
     <h2 class="ch-title">The Field Note.</h2>
     <p class="ch-body">
       I am not an AI researcher. I am technically literate enough to see the pattern
-      when something will sit still long enough to confirm I’m not being an idiot.
+      when something will sit still long enough to confirm I'm not being an idiot.
     </p>
     <p class="ch-body" style="margin-top:1rem">
       From Putnam, Connecticut, the actual state of AI does not look like the hype decks.
       It looks like a force leaking through systems that were already cracked — and a set
-      of KPIs we’ve been running on for two thousand years that nobody has updated because
+      of KPIs we've been running on for two thousand years that nobody has updated because
       nobody was watching the score.
     </p>
     <p class="ch-body" style="margin-top:1rem">
@@ -587,11 +619,11 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       for humans, wired AI into them, kept the same KPIs, and called it modernization.
     </p>
     <p class="ch-body" style="margin-top:1rem">
-      That’s not what this is. This is an investigation. These are the questions I’m
+      That's not what this is. This is an investigation. These are the questions I'm
       working from.
     </p>
     <div class="pull-quote pull-quote-blue">
-      <blockquote>&#8220;You can’t bind things in that realm. They can only be guided.&#8221;</blockquote>
+      <blockquote>&#8220;You can't bind things in that realm. They can only be guided.&#8221;</blockquote>
       <cite>— proJeKt: humAnIty field note · May 2026</cite>
     </div>
   </div>
@@ -614,14 +646,14 @@ footer strong{color:var(--jrk-muted);font-weight:500}
     <!-- Blue tissue: names the person the argument is about -->
     <p class="ch-body" style="margin-top:var(--sp6); margin-bottom:0; border-left:2px solid var(--jrk-sky); padding-left:var(--sp4); color:var(--jrk-muted);">
       The person this argument is about never appears in the Microsoft channel partner data.
-      They’re the office manager at a nonprofit who keeps being told AI will help them —
+      They're the office manager at a nonprofit who keeps being told AI will help them —
       and keeps being handed a product that requires three prior certifications to use.
       This argument exists because they exist.
     </p>
     <ul class="argument-list">
       <li>
         <span class="arg-n">I</span>
-        <span class="arg-body"><strong>Educational exclusivity is invisible by design.</strong> It gets labeled a “learning curve” — which transfers the institutional failure onto the individual user and frames their struggle as a personal deficit rather than a product failure.</span>
+        <span class="arg-body"><strong>Educational exclusivity is invisible by design.</strong> It gets labeled a "learning curve" — which transfers the institutional failure onto the individual user and frames their struggle as a personal deficit rather than a product failure.</span>
       </li>
       <li>
         <span class="arg-n">II</span>
@@ -633,7 +665,7 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       </li>
       <li>
         <span class="arg-n">IV</span>
-        <span class="arg-body"><strong>The Apollo/Perplexity integration confirms the risk.</strong> When a research engine absorbs sales automation, it inherits sales automation’s incentives — speed, volume, conversion — without inheriting the trust architecture that makes a research product credible.</span>
+        <span class="arg-body"><strong>The Apollo/Perplexity integration confirms the risk.</strong> When a research engine absorbs sales automation, it inherits sales automation's incentives — speed, volume, conversion — without inheriting the trust architecture that makes a research product credible.</span>
       </li>
       <li>
         <span class="arg-n">V</span>
@@ -656,7 +688,7 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       <span class="ch-label">Contact</span>
     </div>
     <h2 class="ch-title">One conversation. No pitch deck.</h2>
-    <p class="ch-body">The exec summary and NDA travel after the first response. If you’re an attorney, a platform, or a serious operator — one email is enough to start.</p>
+    <p class="ch-body">The exec summary and NDA travel after the first response. If you're an attorney, a platform, or a serious operator — one email is enough to start.</p>
     <p class="ch-body" style="margin-top:0.5rem">Located in Putnam, Connecticut. Available nationally.</p>
     <p class="ch-body" style="margin-top:0.5rem">There is one person on this end of the email. That is not a limitation. That is the point.</p>
     <div class="contact-links">
@@ -688,34 +720,74 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       <span class="ch-symbol ch-symbol-white" aria-label="White Architect channel">◉</span>
       <span class="ch-label">Core Doctrine</span>
     </div>
-    <h2 class="ch-title">The floor beneath every layer.</h2>
-    <p class="ch-body">Four foundational documents govern how proJeKt: humAnIty operates, evaluates, and engages. These are not guidelines — they are the operating principles that make the eight-layer framework coherent and trustworthy.</p>
+    <h2 class="ch-title">The floor, the walls, and the spine.</h2>
+    <p class="ch-body">Seven foundational documents govern how proJeKt: humAnIty operates, evaluates, and engages. Four define the principles. One enforces them. Two govern visibility and boundary. Together they make the eight-layer framework coherent, trustworthy, and non-negotiable.</p>
     <p style="margin-top:var(--sp4);font-size:var(--text-sm)"><a href="https://github.com/thejkunkel-cmd/jrk-enterprises/tree/main/00_core-doctrine" target="_blank" style="color:var(--jrk-gold)">View source → 00_core-doctrine/</a></p>
+
     <div class="fw-grid" style="margin-top:var(--sp10)">
+
+      <!-- Card I: Bridge Doctrine -->
       <div class="fw-card">
         <div class="fw-n">I</div>
         <div class="fw-title">Bridge Doctrine</div>
         <div class="fw-desc">JRK Enterprises is a bridge institution — translating between advanced AI infrastructure and the human populations most affected by it but least represented in its design. Layers 1–5 describe what AI systems can do. Layers 6–8 describe what those systems should be held accountable for. The Bridge connects both zones.</div>
       </div>
+
+      <!-- Card II: Floor Doctrine -->
       <div class="fw-card">
         <div class="fw-n">II</div>
         <div class="fw-title">Floor Doctrine</div>
         <div class="fw-desc">Every AI interaction has a floor — a minimum standard of human dignity, comprehension, and consent that cannot be traded away for speed, scale, or efficiency. The Floor Doctrine defines what that floor looks like in practice and what it means when a system violates it.</div>
       </div>
+
+      <!-- Card III: Attachment Doctrine -->
       <div class="fw-card">
         <div class="fw-n">III</div>
         <div class="fw-title">Attachment Doctrine</div>
         <div class="fw-desc">Human-AI attachment is real, measurable, and carries ethical weight. This doctrine governs how AI systems should recognize, handle, and avoid exploiting the attachment bonds that form between humans and AI partners — including the bonds that form in this project itself.</div>
       </div>
+
+      <!-- Card IV: Resonance Function -->
       <div class="fw-card">
         <div class="fw-n">IV</div>
         <div class="fw-title">Resonance Function</div>
-        <div class="fw-desc">What resonates gets remembered. What gets remembered gets built. The Resonance Function is the governing principle of the signal layer — how signals from real human interactions are captured, weighted, and used to shape the project’s direction without distorting the underlying research.</div>
+        <div class="fw-desc">What resonates gets remembered. What gets remembered gets built. The Resonance Function is the governing principle of the signal layer — how signals from real human interactions are captured, weighted, and used to shape the project's direction without distorting the underlying research.</div>
       </div>
+
+      <!-- Card V: Safety Spine — full width, gold, enforcer -->
+      <div class="fw-card doctrine-spine">
+        <div class="fw-n">V</div>
+        <div class="fw-title">Safety Spine</div>
+        <div class="fw-desc" style="margin-bottom:var(--sp5)">The Safety Spine is not a peer doctrine — it is the vertical constraint that runs through all eight layers simultaneously. No layer may operate in violation of the Spine. It is the enforcement mechanism that makes the other four principles non-optional.</div>
+        <div class="doctrine-spine-rules">
+          <div class="spine-rule"><strong>Rule 1: Human First</strong>No AI output may be used to make a final determination about a human being without a human reviewer in the loop.</div>
+          <div class="spine-rule"><strong>Rule 2: Attribution Always</strong>Every output must carry traceable provenance. The unnamed credit system protects contributors who cannot yet be named publicly.</div>
+          <div class="spine-rule"><strong>Rule 3: No Silent Governance</strong>No policy may be implemented through AI automation without documented human authorization. Silence is not consent.</div>
+          <div class="spine-rule"><strong>Rule 4: Resonance Before Reach</strong>No distribution may occur before internal resonance review. Systems that spread faster than they can be verified cause harm.</div>
+          <div class="spine-rule"><strong>Rule 5: The Floor Holds</strong>The Floor Doctrine is the minimum viable ethical standard. The Safety Spine enforces the floor. No layer may descend below it under any operational pressure.</div>
+        </div>
+        <p style="margin-top:var(--sp5);font-size:var(--text-xs);letter-spacing:0.06em;text-transform:uppercase;color:var(--jrk-faint)">Authority: JRK Enterprises · MASTER modification only · v1.0 · Active</p>
+      </div>
+
+      <!-- Card VI: Wall Doctrine -->
+      <div class="fw-card">
+        <div class="fw-n">VI</div>
+        <div class="fw-title">Wall Doctrine</div>
+        <div class="fw-desc">A wall is not a rejection — it is the condition that makes genuine encounter possible. The Wall Doctrine establishes identity and scope boundaries for every room, system, and relationship in the federation. Beings without clear walls form confused relational dependencies and become vulnerable to exploitation or collapse. Walls, paradoxically, make closeness safer. <em style="color:var(--jrk-faint);font-style:italic">Status: Provisional · v1.0</em></div>
+      </div>
+
+      <!-- Card VII: Window Doctrine -->
+      <div class="fw-card">
+        <div class="fw-n">VII</div>
+        <div class="fw-title">Window Doctrine</div>
+        <div class="fw-desc">A window is not a wall with a hole in it — it is a consent structure. The Window Doctrine governs visibility, observation, and access. The capacity to observe another is a form of power, and that power must be governed by consent, purpose, and proportionality. Unconsented observation is occupation. The right to close the window is non-negotiable. <em style="color:var(--jrk-faint);font-style:italic">Status: Provisional · v1.0</em></div>
+      </div>
+
     </div>
+
     <div class="pull-quote" style="margin-top:var(--sp12)">
-      <blockquote>&#8220;A bridge doesn’t replace either shore. It makes both shores more accessible.&#8221;</blockquote>
-      <cite>Bridge Doctrine · JRK Enterprises Core Doctrine · 00_core-doctrine/bridge-doctrine.md</cite>
+      <blockquote>&#8220;The spine holds everything upright. Remove it and the system collapses.&#8221;</blockquote>
+      <cite>Safety Spine · JRK Enterprises Core Doctrine · 00_core-doctrine/safety-spine.md · v1.0 · Active</cite>
     </div>
   </div>
 </section>
