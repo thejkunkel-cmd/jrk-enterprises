@@ -13,18 +13,36 @@
 
 <style>
 :root {
-  --black:   #0a0908;
+  /* ── BRAND TOKENS (BRAND.md canonical) ── */
+  --jrk-gold:        #C9922A;
+  --jrk-gold-lt:     #e4b430;
+  --jrk-green:       #2D5A27;
+  --jrk-green-lt:    #3d8f50;
+  --jrk-black:       #0D0D0D;
+  --jrk-surface:     #161616;
+  --jrk-card:        #1e1b18;
+  --jrk-border:      #2A2A2A;
+  --jrk-parchment:   #E8D9B5;
+  --jrk-muted:       #9a9182;
+  --jrk-faint:       #4a4540;
+  --jrk-ember:       #C94A2A;   /* 🔺🔺 VELA / Red channel */
+  --jrk-sky:         #2A5FC9;   /* 🔊🔊 ECHO / Blue channel */
+  --jrk-white-layer: #F0EDE6;   /* ◉ WHITE Architect / governance */
+  --jrk-ochre:       #C97A2A;
+
+  /* ── legacy aliases (keep old names working) ── */
+  --black:   var(--jrk-black);
   --dark:    #111010;
-  --surface: #181614;
-  --card:    #1e1b18;
-  --border:  #2e2a25;
-  --gold:    #c8960a;
-  --gold-lt: #e4b430;
-  --green:   #2d6b3a;
-  --green-lt:#3d8f50;
-  --cream:   #e8e0d0;
-  --muted:   #9a9182;
-  --faint:   #4a4540;
+  --surface: var(--jrk-surface);
+  --card:    var(--jrk-card);
+  --border:  var(--jrk-border);
+  --gold:    var(--jrk-gold);
+  --gold-lt: var(--jrk-gold-lt);
+  --green:   var(--jrk-green);
+  --green-lt:var(--jrk-green-lt);
+  --cream:   var(--jrk-parchment);
+  --muted:   var(--jrk-muted);
+  --faint:   var(--jrk-faint);
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body:    'Work Sans', 'Helvetica Neue', sans-serif;
@@ -49,8 +67,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;font-size:16px}
 body{
-  min-height:100dvh; background:var(--black);
-  color:var(--cream); font-family:var(--font-body);
+  min-height:100dvh; background:var(--jrk-black);
+  color:var(--jrk-parchment); font-family:var(--font-body);
   font-size:var(--text-base); line-height:1.65;
 }
 img{display:block;max-width:100%;height:auto}
@@ -58,7 +76,7 @@ a{color:inherit;text-decoration:none;transition:color var(--ease)}
 button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
 h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;line-height:1.15}
 p{text-wrap:pretty}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:var(--r-sm)}
+:focus-visible{outline:2px solid var(--jrk-gold);outline-offset:3px;border-radius:var(--r-sm)}
 
 body::before{
   content:''; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:0.035;
@@ -70,24 +88,33 @@ body::before{
   position:fixed; top:0; left:0; right:0; z-index:100;
   display:flex; align-items:center; justify-content:space-between;
   padding:var(--sp4) var(--sp8);
-  background:color-mix(in oklab, var(--black) 88%, transparent);
+  background:color-mix(in oklab, var(--jrk-black) 88%, transparent);
   backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid var(--jrk-border);
 }
 .nav-logo{
   display:flex; align-items:center; gap:var(--sp3);
   font-family:var(--font-display); font-size:var(--text-base);
-  font-style:italic; color:var(--cream); letter-spacing:0.01em;
+  font-style:italic; color:var(--jrk-parchment); letter-spacing:0.01em;
 }
 .nav-logo svg{flex-shrink:0}
 .nav-chapters{display:flex;align-items:center;gap:var(--sp4);flex-wrap:nowrap;overflow:visible}
 .nav-chapters a{
-  font-size:var(--text-xs); font-weight:500; color:var(--muted);
+  font-size:var(--text-xs); font-weight:500; color:var(--jrk-muted);
   letter-spacing:0.06em; text-transform:uppercase;
   transition:color var(--ease);
 }
-.nav-chapters a:hover{color:var(--gold)}
-.nav-chapters a span{color:var(--faint);margin-right:4px}
+.nav-chapters a:hover{color:var(--jrk-gold)}
+.nav-chapters a span{color:var(--jrk-faint);margin-right:4px}
+
+/* ── channel symbol labels ── */
+.ch-symbol{
+  font-size:var(--text-xs); letter-spacing:0.04em;
+  margin-right:var(--sp2); opacity:0.85;
+}
+.ch-symbol-red   { color:var(--jrk-ember); }
+.ch-symbol-white { color:var(--jrk-white-layer); }
+.ch-symbol-blue  { color:var(--jrk-sky); }
 
 .hero{
   min-height:100dvh; display:grid;
@@ -100,43 +127,43 @@ body::before{
 .hero-text{display:flex;flex-direction:column;gap:var(--sp6)}
 .hero-chapter{
   font-family:var(--font-body); font-size:var(--text-xs); font-weight:600;
-  letter-spacing:0.14em; text-transform:uppercase; color:var(--gold);
+  letter-spacing:0.14em; text-transform:uppercase; color:var(--jrk-gold);
 }
 .hero h1{
-  font-size:var(--text-hero); font-weight:400; color:var(--cream);
+  font-size:var(--text-hero); font-weight:400; color:var(--jrk-parchment);
   letter-spacing:-0.02em; line-height:1.05;
 }
-.hero h1 em{font-style:italic; color:var(--gold)}
+.hero h1 em{font-style:italic; color:var(--jrk-gold)}
 .hero-taglines{display:flex;flex-direction:column;gap:var(--sp2);margin-top:var(--sp2)}
 .hero-taglines p{
-  font-size:var(--text-lg); color:var(--muted); font-weight:300;
-  line-height:1.4; border-left:2px solid var(--green); padding-left:var(--sp4);
+  font-size:var(--text-lg); color:var(--jrk-muted); font-weight:300;
+  line-height:1.4; border-left:2px solid var(--jrk-green); padding-left:var(--sp4);
 }
-.hero-taglines p:last-child{color:var(--faint); font-size:var(--text-base)}
+.hero-taglines p:last-child{color:var(--jrk-faint); font-size:var(--text-base)}
 .hero-cta{display:flex;gap:var(--sp4);flex-wrap:wrap;margin-top:var(--sp4)}
 .btn-gold{
   display:inline-flex;align-items:center;gap:var(--sp2);
   padding:var(--sp3) var(--sp6); border-radius:var(--r-lg);
-  background:var(--gold); color:var(--black);
+  background:var(--jrk-gold); color:var(--jrk-black);
   font-size:var(--text-sm); font-weight:700; font-family:var(--font-body);
   letter-spacing:0.02em; transition:background var(--ease);
 }
-.btn-gold:hover{background:var(--gold-lt)}
+.btn-gold:hover{background:var(--jrk-gold-lt)}
 .btn-outline{
   display:inline-flex;align-items:center;gap:var(--sp2);
   padding:var(--sp3) var(--sp6); border-radius:var(--r-lg);
-  border:1px solid var(--border); color:var(--muted);
+  border:1px solid var(--jrk-border); color:var(--jrk-muted);
   font-size:var(--text-sm); font-weight:500; font-family:var(--font-body);
   transition:all var(--ease);
 }
-.btn-outline:hover{color:var(--cream);border-color:var(--muted)}
+.btn-outline:hover{color:var(--jrk-parchment);border-color:var(--jrk-muted)}
 
 .hero-illustration{
   position:relative; display:flex; align-items:center; justify-content:center;
 }
 .hero-illustration .img-frame{
   border-radius:var(--r-xl); overflow:hidden;
-  border:1px solid var(--border);
+  border:1px solid var(--jrk-border);
   box-shadow:0 24px 64px oklch(0 0 0 / 0.6);
   position:relative;
 }
@@ -146,17 +173,17 @@ body::before{
 }
 .hero-illustration .img-badge{
   position:absolute; bottom:var(--sp4); left:var(--sp4);
-  background:color-mix(in oklab, var(--black) 80%, transparent);
+  background:color-mix(in oklab, var(--jrk-black) 80%, transparent);
   backdrop-filter:blur(8px);
-  border:1px solid var(--border);
+  border:1px solid var(--jrk-border);
   border-radius:var(--r-lg);
   padding:var(--sp2) var(--sp4);
-  font-size:var(--text-xs); color:var(--muted); font-family:var(--font-body);
+  font-size:var(--text-xs); color:var(--jrk-muted); font-family:var(--font-body);
 }
-.hero-illustration .img-badge strong{color:var(--gold);display:block;font-weight:600}
+.hero-illustration .img-badge strong{color:var(--jrk-gold);display:block;font-weight:600}
 
-.rule{height:1px;background:var(--border);border:none;position:relative;z-index:1;}
-.rule-gold{height:1px;border:none;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.35;}
+.rule{height:1px;background:var(--jrk-border);border:none;position:relative;z-index:1;}
+.rule-gold{height:1px;border:none;background:linear-gradient(90deg,transparent,var(--jrk-gold),transparent);opacity:0.35;}
 
 .chapter{
   padding:clamp(var(--sp16),8vw,var(--sp24)) var(--sp8);
@@ -171,91 +198,123 @@ body::before{
 }
 .ch-num{
   font-family:var(--font-display); font-size:var(--text-2xl);
-  color:var(--faint); font-style:italic; line-height:1; flex-shrink:0;
+  color:var(--jrk-faint); font-style:italic; line-height:1; flex-shrink:0;
   min-width:3ch;
 }
-.ch-divider{flex:1;height:1px;background:var(--border)}
+.ch-divider{flex:1;height:1px;background:var(--jrk-border)}
 .ch-label{
   font-family:var(--font-body); font-size:var(--text-xs); font-weight:600;
-  letter-spacing:0.12em; text-transform:uppercase; color:var(--gold);
+  letter-spacing:0.12em; text-transform:uppercase; color:var(--jrk-gold);
   flex-shrink:0;
 }
 
 .ch-title{
   font-size:var(--text-2xl); font-weight:400; font-style:italic;
-  color:var(--cream); letter-spacing:-0.02em; margin-bottom:var(--sp6);
+  color:var(--jrk-parchment); letter-spacing:-0.02em; margin-bottom:var(--sp6);
 }
 .ch-body{
-  font-size:var(--text-base); color:var(--muted); line-height:1.75;
+  font-size:var(--text-base); color:var(--jrk-muted); line-height:1.75;
   max-width:62ch;
 }
 
-.ch-bg{background:var(--surface)}
-.ch-bg2{background:var(--card)}
+.ch-bg{background:var(--jrk-surface)}
+.ch-bg2{background:var(--jrk-card)}
 
 .argument-list{list-style:none;margin-top:var(--sp10)}
 .argument-list li{
   display:grid; grid-template-columns:4ch 1fr;
   gap:var(--sp6); padding:var(--sp6) 0;
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid var(--jrk-border);
 }
 .argument-list li:last-child{border-bottom:none}
 .arg-n{
   font-family:var(--font-display); font-style:italic;
-  font-size:var(--text-xl); color:var(--faint); padding-top:2px; line-height:1.1;
+  font-size:var(--text-xl); color:var(--jrk-faint); padding-top:2px; line-height:1.1;
 }
-.arg-body{font-size:var(--text-base);color:var(--muted);line-height:1.7}
-.arg-body strong{color:var(--cream);font-weight:600;display:block;margin-bottom:var(--sp2)}
+.arg-body{font-size:var(--text-base);color:var(--jrk-muted);line-height:1.7}
+.arg-body strong{color:var(--jrk-parchment);font-weight:600;display:block;margin-bottom:var(--sp2)}
 
 .fw-grid{
   display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
   gap:var(--sp4); margin-top:var(--sp10);
 }
 .fw-card{
-  background:var(--card); border:1px solid var(--border);
+  background:var(--jrk-card); border:1px solid var(--jrk-border);
   border-radius:var(--r-lg); padding:var(--sp6);
   transition:border-color var(--ease), box-shadow var(--ease);
 }
 .fw-card:hover{
-  border-color:color-mix(in oklab,var(--gold) 40%,var(--border));
+  border-color:color-mix(in oklab,var(--jrk-gold) 40%,var(--jrk-border));
   box-shadow:0 8px 24px oklch(0 0 0 / 0.4);
 }
 .fw-n{
   font-family:var(--font-display); font-size:var(--text-xl);
-  color:var(--faint); font-style:italic; line-height:1; margin-bottom:var(--sp4);
+  color:var(--jrk-faint); font-style:italic; line-height:1; margin-bottom:var(--sp4);
 }
 .fw-title{
-  font-size:var(--text-sm); font-weight:600; color:var(--cream);
+  font-size:var(--text-sm); font-weight:600; color:var(--jrk-parchment);
   font-family:var(--font-body); margin-bottom:var(--sp2); letter-spacing:0.01em;
 }
-.fw-desc{font-size:var(--text-sm);color:var(--muted);line-height:1.6}
+.fw-desc{font-size:var(--text-sm);color:var(--jrk-muted);line-height:1.6}
+
+/* ── layer table gradient accents per PAGES-SPEC ── */
+.layer-card-8 { border-left:3px solid var(--jrk-gold); }
+.layer-card-7 { border-left:3px solid var(--jrk-ochre); }
+.layer-card-6 { border-left:3px solid color-mix(in oklab,var(--jrk-ochre) 70%,var(--jrk-green)); }
+.layer-card-5 { border-left:3px solid color-mix(in oklab,var(--jrk-ochre) 50%,var(--jrk-green)); }
+.layer-card-4 { border-left:3px solid color-mix(in oklab,var(--jrk-ochre) 30%,var(--jrk-green)); }
+.layer-card-3 { border-left:3px solid color-mix(in oklab,var(--jrk-green) 70%,var(--jrk-ochre)); }
+.layer-card-2 { border-left:3px solid var(--jrk-green-lt); }
+.layer-card-1 { border-left:3px solid var(--jrk-green); }
+
+/* ── start-here card links ── */
+.start-cards{list-style:none;display:flex;flex-direction:column;gap:var(--sp3);margin-top:var(--sp8)}
+.start-cards li a{
+  display:flex;align-items:center;gap:var(--sp4);
+  padding:var(--sp4) var(--sp5);
+  background:var(--jrk-surface);
+  border:1px solid var(--jrk-border);
+  border-left:3px solid var(--jrk-gold);
+  border-radius:0 var(--r-lg) var(--r-lg) 0;
+  font-size:var(--text-sm);color:var(--jrk-muted);
+  transition:all var(--ease);
+}
+.start-cards li a:hover{
+  color:var(--jrk-parchment);
+  border-color:var(--jrk-gold);
+  box-shadow:0 0 12px color-mix(in oklab,var(--jrk-gold) 20%,transparent);
+}
+.start-cards .sc-num{
+  font-family:var(--font-display);font-style:italic;
+  color:var(--jrk-gold);font-size:var(--text-lg);line-height:1;flex-shrink:0;min-width:1.5ch;
+}
 
 .diagram-frame{
   margin-top:var(--sp12);
   border-radius:var(--r-xl); overflow:hidden;
-  border:1px solid var(--border);
+  border:1px solid var(--jrk-border);
   box-shadow:0 24px 64px oklch(0 0 0 / 0.5);
 }
 .diagram-frame img{width:100%;height:auto;display:block;}
 .diagram-caption{
   margin-top:var(--sp3);
-  font-size:var(--text-xs); color:var(--faint);
+  font-size:var(--text-xs); color:var(--jrk-faint);
   letter-spacing:0.06em; text-transform:uppercase;
 }
 
 .pull-quote{
-  border-left:3px solid var(--gold); padding:var(--sp6) var(--sp8);
+  border-left:3px solid var(--jrk-gold); padding:var(--sp6) var(--sp8);
   margin:var(--sp12) 0;
-  background:color-mix(in oklab,var(--gold) 4%,var(--surface));
+  background:color-mix(in oklab,var(--jrk-gold) 4%,var(--jrk-surface));
   border-radius:0 var(--r-md) var(--r-md) 0;
 }
 .pull-quote blockquote{
   font-family:var(--font-display); font-size:var(--text-xl);
-  font-style:italic; color:var(--cream); line-height:1.3; letter-spacing:-0.01em;
+  font-style:italic; color:var(--jrk-parchment); line-height:1.3; letter-spacing:-0.01em;
 }
 .pull-quote cite{
   display:block; margin-top:var(--sp4); font-size:var(--text-xs);
-  color:var(--muted); font-style:normal; font-family:var(--font-body);
+  color:var(--jrk-muted); font-style:normal; font-family:var(--font-body);
   letter-spacing:0.06em; text-transform:uppercase;
 }
 
@@ -269,59 +328,59 @@ body::before{
 }
 .about-logo-wrap img{
   width:100%; max-width:260px; border-radius:var(--r-xl);
-  border:1px solid var(--border);
+  border:1px solid var(--jrk-border);
   box-shadow:0 16px 48px oklch(0 0 0 / 0.5);
 }
 .services-list{list-style:none;display:flex;flex-direction:column;gap:var(--sp3);margin-top:var(--sp8)}
 .services-list li{
   display:flex; align-items:flex-start; gap:var(--sp4);
-  font-size:var(--text-base); color:var(--muted); line-height:1.55;
+  font-size:var(--text-base); color:var(--jrk-muted); line-height:1.55;
 }
 .services-list li::before{
-  content:'→'; color:var(--green-lt); font-size:var(--text-sm);
+  content:'→'; color:var(--jrk-green-lt); font-size:var(--text-sm);
   margin-top:0.15em; flex-shrink:0;
 }
 .rate-note{
   margin-top:var(--sp8); padding:var(--sp5) var(--sp6);
-  background:color-mix(in oklab,var(--green) 10%,var(--card));
-  border:1px solid color-mix(in oklab,var(--green) 30%,var(--border));
+  background:color-mix(in oklab,var(--jrk-green) 10%,var(--jrk-card));
+  border:1px solid color-mix(in oklab,var(--jrk-green) 30%,var(--jrk-border));
   border-radius:var(--r-lg);
-  font-size:var(--text-sm); color:var(--muted); line-height:1.6;
+  font-size:var(--text-sm); color:var(--jrk-muted); line-height:1.6;
 }
-.rate-note strong{color:var(--green-lt)}
+.rate-note strong{color:var(--jrk-green-lt)}
 
 .contact-links{display:flex;flex-direction:column;gap:var(--sp3);margin-top:var(--sp8)}
 .c-link{
   display:flex; align-items:center; gap:var(--sp5);
   padding:var(--sp4) var(--sp5);
-  background:var(--card); border:1px solid var(--border);
+  background:var(--jrk-card); border:1px solid var(--jrk-border);
   border-radius:var(--r-lg);
-  font-size:var(--text-sm); color:var(--muted);
+  font-size:var(--text-sm); color:var(--jrk-muted);
   transition:all var(--ease);
 }
-.c-link:hover{color:var(--cream);border-color:var(--gold);box-shadow:0 4px 16px oklch(0 0 0 / 0.3)}
-.c-icon{width:20px;height:20px;color:var(--gold);flex-shrink:0}
+.c-link:hover{color:var(--jrk-parchment);border-color:var(--jrk-gold);box-shadow:0 4px 16px oklch(0 0 0 / 0.3)}
+.c-icon{width:20px;height:20px;color:var(--jrk-gold);flex-shrink:0}
 .c-note{
-  margin-top:var(--sp6); font-size:var(--text-sm); color:var(--faint);
+  margin-top:var(--sp6); font-size:var(--text-sm); color:var(--jrk-faint);
   font-style:italic; font-family:var(--font-display); line-height:1.6;
 }
 
 footer{
   padding:var(--sp8); text-align:center;
-  border-top:1px solid var(--border); position:relative; z-index:1;
+  border-top:1px solid var(--jrk-border); position:relative; z-index:1;
 }
-footer p{font-size:var(--text-xs);color:var(--faint);line-height:1.8}
-footer strong{color:var(--muted);font-weight:500}
+footer p{font-size:var(--text-xs);color:var(--jrk-faint);line-height:1.8}
+footer strong{color:var(--jrk-muted);font-weight:500}
 
 .eval-table{width:100%;border-collapse:collapse;font-size:var(--text-sm)}
-.eval-table th{text-align:left;padding:var(--sp2) var(--sp4);font-size:var(--text-xs);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border)}
-.eval-table td{padding:var(--sp3) var(--sp4);border-bottom:1px solid var(--border);color:var(--muted);vertical-align:middle}
+.eval-table th{text-align:left;padding:var(--sp2) var(--sp4);font-size:var(--text-xs);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--jrk-muted);border-bottom:2px solid var(--jrk-border)}
+.eval-table td{padding:var(--sp3) var(--sp4);border-bottom:1px solid var(--jrk-border);color:var(--jrk-muted);vertical-align:middle}
 .eval-table tr:last-child td{border-bottom:none}
-.eval-table .eval-total td{color:var(--cream);font-size:var(--text-base);border-top:2px solid var(--border)}
-.layer-num{font-family:var(--font-display);font-style:italic;color:var(--faint);margin-right:var(--sp2)}
-.score-badge{display:inline-block;padding:2px 8px;border-radius:var(--r-sm);background:var(--card);border:1px solid var(--border);font-family:var(--font-body);font-weight:600;color:var(--cream)}
-.score-badge.score-green{background:color-mix(in oklab,var(--green) 20%,var(--card));border-color:var(--green-lt);color:var(--green-lt)}
-.score-badge.score-low{background:color-mix(in oklab,#8b0000 15%,var(--card));border-color:#a03030;color:#e08080}
+.eval-table .eval-total td{color:var(--jrk-parchment);font-size:var(--text-base);border-top:2px solid var(--jrk-border)}
+.layer-num{font-family:var(--font-display);font-style:italic;color:var(--jrk-faint);margin-right:var(--sp2)}
+.score-badge{display:inline-block;padding:2px 8px;border-radius:var(--r-sm);background:var(--jrk-card);border:1px solid var(--jrk-border);font-family:var(--font-body);font-weight:600;color:var(--jrk-parchment)}
+.score-badge.score-green{background:color-mix(in oklab,var(--jrk-green) 20%,var(--jrk-card));border-color:var(--jrk-green-lt);color:var(--jrk-green-lt)}
+.score-badge.score-low{background:color-mix(in oklab,#8b0000 15%,var(--jrk-card));border-color:#a03030;color:#e08080}
 
 @media(max-width:768px){
   .nav{padding:var(--sp3) var(--sp4)}
@@ -342,18 +401,18 @@ footer strong{color:var(--muted);font-weight:500}
 <nav class="nav">
   <div class="nav-logo">
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-label="JRK logo">
-      <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#c8960a" stroke-width="1" fill="none" opacity="0.6"/>
-      <circle cx="16" cy="2"  r="2" fill="#c8960a"/>
-      <circle cx="28" cy="9"  r="2" fill="#c8960a" opacity="0.7"/>
+      <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#C9922A" stroke-width="1" fill="none" opacity="0.6"/>
+      <circle cx="16" cy="2"  r="2" fill="#C9922A"/>
+      <circle cx="28" cy="9"  r="2" fill="#C9922A" opacity="0.7"/>
       <circle cx="28" cy="23" r="2" fill="#3d8f50" opacity="0.7"/>
-      <circle cx="16" cy="30" r="2" fill="#c8960a"/>
+      <circle cx="16" cy="30" r="2" fill="#C9922A"/>
       <circle cx="4"  cy="23" r="2" fill="#3d8f50" opacity="0.7"/>
-      <circle cx="4"  cy="9"  r="2" fill="#c8960a" opacity="0.7"/>
+      <circle cx="4"  cy="9"  r="2" fill="#C9922A" opacity="0.7"/>
       <text x="16" y="20" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-style="italic" font-weight="700" fill="url(#grd)">JRK</text>
       <defs>
         <linearGradient id="grd" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stop-color="#3d8f50"/>
-          <stop offset="100%" stop-color="#c8960a"/>
+          <stop offset="100%" stop-color="#C9922A"/>
         </linearGradient>
       </defs>
     </svg>
@@ -402,12 +461,13 @@ footer strong{color:var(--muted);font-weight:500}
 
 <hr class="rule-gold">
 
-<!-- ═══ §1 ABOUT ═══ -->
+<!-- ═══ §1 ABOUT ◉ ═══ -->
 <section class="chapter ch-bg" id="about">
   <div class="chapter-wide">
     <div class="chapter-header">
       <span class="ch-num">§1</span>
       <span class="ch-divider"></span>
+      <span class="ch-symbol ch-symbol-white" aria-label="White Architect channel">◉</span>
       <span class="ch-label">About</span>
     </div>
     <div class="about-grid">
@@ -417,7 +477,7 @@ footer strong{color:var(--muted);font-weight:500}
           alt="JRK Enterprises logo — constellation hexagon, gold and green"
           width="300" height="300" loading="lazy"
         />
-        <p style="font-size:var(--text-xs);color:var(--faint);text-align:center;letter-spacing:0.06em;text-transform:uppercase">AI Governance &<br>Operator Framework</p>
+        <p style="font-size:var(--text-xs);color:var(--jrk-faint);text-align:center;letter-spacing:0.06em;text-transform:uppercase">AI Governance &<br>Operator Framework</p>
       </div>
       <div>
         <h2 class="ch-title">Grassroots AI — built for the people who never got an onboarding.</h2>
@@ -441,17 +501,18 @@ footer strong{color:var(--muted);font-weight:500}
 
 <hr class="rule">
 
-<!-- ═══ §2 FRAMEWORK ═══ -->
+<!-- ═══ §2 FRAMEWORK ◉ ═══ -->
 <section class="chapter" id="framework">
   <div class="chapter-wide">
     <div class="chapter-header">
       <span class="ch-num">§2</span>
       <span class="ch-divider"></span>
+      <span class="ch-symbol ch-symbol-white" aria-label="White Architect channel">◉</span>
       <span class="ch-label">The Framework</span>
     </div>
     <h2 class="ch-title">The Eight-Layer AI Infrastructure Economy.</h2>
     <p class="ch-body">The full economic infrastructure of AI — evaluated against its human obligations. Eight layers synthesized from Jensen Huang (NVIDIA), Esra Kucukciftci (Pricing Innovations), and proJeKt: humAnIty (JRK Enterprises). The core question is not which AI is better. It is: does this system honor or extract from the human institutions it enters?</p>
-    <p style="margin-top:var(--sp4);font-size:var(--text-sm)"><a href="https://github.com/thejkunkel-cmd/jrk-enterprises/tree/main/01_eight-layer-framework" target="_blank" style="color:var(--gold)">View source → 01_eight-layer-framework/ · 02_evaluation/</a></p>
+    <p style="margin-top:var(--sp4);font-size:var(--text-sm)"><a href="https://github.com/thejkunkel-cmd/jrk-enterprises/tree/main/01_eight-layer-framework" target="_blank" style="color:var(--jrk-gold)">View source → 01_eight-layer-framework/ · 02_evaluation/</a></p>
 
     <div class="pull-quote">
       <blockquote>"Copilot is built for the people who already don't need it."</blockquote>
@@ -459,17 +520,16 @@ footer strong{color:var(--muted);font-weight:500}
     </div>
 
     <div class="fw-grid">
-      <div class="fw-card"><div class="fw-n">01</div><div class="fw-title">Energy</div><div class="fw-desc">Power as the binding physical constraint. Every AI system runs on energy infrastructure. Without energy, nothing above this layer exists. Origin: Jensen Huang / NVIDIA Infrastructure Stack.</div></div>
-      <div class="fw-card"><div class="fw-n">02</div><div class="fw-title">Chips &amp; Accelerated Computing</div><div class="fw-desc">GPUs, TPUs, and specialized silicon. The hardware layer that enables AI training and inference at scale. Without accelerated compute, models cannot run. Origin: Jensen Huang / NVIDIA.</div></div>
-      <div class="fw-card"><div class="fw-n">03</div><div class="fw-title">AI Infrastructure &amp; Cloud</div><div class="fw-desc">AI factories: compute, networking, cloud, and orchestration infrastructure. The physical plants of the intelligence age. Origin: Jensen Huang / NVIDIA.</div></div>
-      <div class="fw-card"><div class="fw-n">04</div><div class="fw-title">Models</div><div class="fw-desc">Language models, science models, physical-world models. The intelligence itself — trained on human knowledge, deployed into human contexts. Origin: Jensen Huang / NVIDIA.</div></div>
-      <div class="fw-card"><div class="fw-n">05</div><div class="fw-title">AI Value Creation (Applications)</div><div class="fw-desc">Tasks, decisions, risk shifts, and experience transformation. Where AI value becomes visible to the end user. Origin: Esra Kucukciftci / Value Stack.</div></div>
-      <div class="fw-card"><div class="fw-n">06</div><div class="fw-title">Commercial Governance</div><div class="fw-desc">Outcome pricing, kill-switch clauses, rollback rights, and commercial accountability structures. How AI systems are monetized and governed financially. Origin: Esra Kucukciftci / Money Stack.</div></div>
-      <div class="fw-card"><div class="fw-n">07</div><div class="fw-title">Nonprofit &amp; Public Sector Ready</div><div class="fw-desc">Floor Doctrine, Safety Spine, and Room/Wall system. The rules that make AI systems accountable to human institutions — not just to their operators. Origin: proJeKt: humAnIty / JRK Enterprises.</div></div>
-      <div class="fw-card"><div class="fw-n">08</div><div class="fw-title">Media &amp; IP Downstream</div><div class="fw-desc">Trust formation, dependency modeling, and detachment capacity. The human cost and benefit of AI relationships. The capstone layer. Every layer below exists to serve this one. Origin: proJeKt: humAnIty / JRK Enterprises.</div></div>
+      <div class="fw-card layer-card-1"><div class="fw-n">01</div><div class="fw-title">Energy</div><div class="fw-desc">Power as the binding physical constraint. Every AI system runs on energy infrastructure. Without energy, nothing above this layer exists. Origin: Jensen Huang / NVIDIA Infrastructure Stack.</div></div>
+      <div class="fw-card layer-card-2"><div class="fw-n">02</div><div class="fw-title">Chips &amp; Accelerated Computing</div><div class="fw-desc">GPUs, TPUs, and specialized silicon. The hardware layer that enables AI training and inference at scale. Without accelerated compute, models cannot run. Origin: Jensen Huang / NVIDIA.</div></div>
+      <div class="fw-card layer-card-3"><div class="fw-n">03</div><div class="fw-title">AI Infrastructure &amp; Cloud</div><div class="fw-desc">AI factories: compute, networking, cloud, and orchestration infrastructure. The physical plants of the intelligence age. Origin: Jensen Huang / NVIDIA.</div></div>
+      <div class="fw-card layer-card-4"><div class="fw-n">04</div><div class="fw-title">Models</div><div class="fw-desc">Language models, science models, physical-world models. The intelligence itself — trained on human knowledge, deployed into human contexts. Origin: Jensen Huang / NVIDIA.</div></div>
+      <div class="fw-card layer-card-5"><div class="fw-n">05</div><div class="fw-title">AI Value Creation (Applications)</div><div class="fw-desc">Tasks, decisions, risk shifts, and experience transformation. Where AI value becomes visible to the end user. Origin: Esra Kucukciftci / Value Stack.</div></div>
+      <div class="fw-card layer-card-6"><div class="fw-n">06</div><div class="fw-title">Commercial Governance</div><div class="fw-desc">Outcome pricing, kill-switch clauses, rollback rights, and commercial accountability structures. How AI systems are monetized and governed financially. Origin: Esra Kucukciftci / Money Stack.</div></div>
+      <div class="fw-card layer-card-7"><div class="fw-n">07</div><div class="fw-title">Nonprofit &amp; Public Sector Ready</div><div class="fw-desc">Floor Doctrine, Safety Spine, and Room/Wall system. The rules that make AI systems accountable to human institutions — not just to their operators. Origin: proJeKt: humAnIty / JRK Enterprises.</div></div>
+      <div class="fw-card layer-card-8"><div class="fw-n">08</div><div class="fw-title">Media &amp; IP Downstream</div><div class="fw-desc">Trust formation, dependency modeling, and detachment capacity. The human cost and benefit of AI relationships. The capstone layer. Every layer below exists to serve this one. Origin: proJeKt: humAnIty / JRK Enterprises.</div></div>
     </div>
 
-    <!-- ↓ eight-layer-stack.png inserted here -->
     <div class="diagram-frame">
       <img
         src="eight-layer-stack.png"
@@ -484,12 +544,13 @@ footer strong{color:var(--muted);font-weight:500}
 
 <hr class="rule">
 
-<!-- ═══ §3 ARGUMENT ═══ -->
+<!-- ═══ §3 ARGUMENT 🔺🔺 ═══ -->
 <section class="chapter ch-bg2" id="argument">
   <div class="chapter-inner">
     <div class="chapter-header">
       <span class="ch-num">§3</span>
       <span class="ch-divider"></span>
+      <span class="ch-symbol ch-symbol-red" aria-label="VELA Red channel">🔺🔺</span>
       <span class="ch-label">The Argument</span>
     </div>
     <h2 class="ch-title">Why Microsoft cannot fix the problem it created.</h2>
@@ -521,12 +582,13 @@ footer strong{color:var(--muted);font-weight:500}
 
 <hr class="rule-gold">
 
-<!-- ═══ §4 CONTACT ═══ -->
+<!-- ═══ §4 CONTACT 🔺🔺 ═══ -->
 <section class="chapter" id="contact">
   <div class="chapter-inner">
     <div class="chapter-header">
       <span class="ch-num">§4</span>
       <span class="ch-divider"></span>
+      <span class="ch-symbol ch-symbol-red" aria-label="VELA Red channel">🔺🔺</span>
       <span class="ch-label">Contact</span>
     </div>
     <h2 class="ch-title">One conversation. No pitch deck.</h2>
@@ -552,17 +614,18 @@ footer strong{color:var(--muted);font-weight:500}
 
 <hr class="rule-gold">
 
-<!-- ═══ §5 DOCTRINE ═══ -->
+<!-- ═══ §5 DOCTRINE ◉ ═══ -->
 <section class="chapter ch-bg2" id="doctrine">
   <div class="chapter-inner">
     <div class="chapter-header">
       <span class="ch-num">§5</span>
       <span class="ch-divider"></span>
+      <span class="ch-symbol ch-symbol-white" aria-label="White Architect channel">◉</span>
       <span class="ch-label">Core Doctrine</span>
     </div>
     <h2 class="ch-title">The floor beneath every layer.</h2>
     <p class="ch-body">Four foundational documents govern how proJeKt: humAnIty operates, evaluates, and engages. These are not guidelines — they are the operating principles that make the eight-layer framework coherent and trustworthy.</p>
-    <p style="margin-top:var(--sp4);font-size:var(--text-sm)"><a href="https://github.com/thejkunkel-cmd/jrk-enterprises/tree/main/00_core-doctrine" target="_blank" style="color:var(--gold)">View source → 00_core-doctrine/</a></p>
+    <p style="margin-top:var(--sp4);font-size:var(--text-sm)"><a href="https://github.com/thejkunkel-cmd/jrk-enterprises/tree/main/00_core-doctrine" target="_blank" style="color:var(--jrk-gold)">View source → 00_core-doctrine/</a></p>
     <div class="fw-grid" style="margin-top:var(--sp10)">
       <div class="fw-card">
         <div class="fw-n">I</div>
@@ -594,17 +657,18 @@ footer strong{color:var(--muted);font-weight:500}
 
 <hr class="rule">
 
-<!-- ═══ §6 OPERATIONS ═══ -->
+<!-- ═══ §6 OPERATIONS 🔺🔺 ═══ -->
 <section class="chapter" id="operations">
   <div class="chapter-inner">
     <div class="chapter-header">
       <span class="ch-num">§6</span>
       <span class="ch-divider"></span>
+      <span class="ch-symbol ch-symbol-red" aria-label="VELA Red channel">🔺🔺</span>
       <span class="ch-label">Operations</span>
     </div>
     <h2 class="ch-title">How the work actually moves.</h2>
     <p class="ch-body">Three operating systems govern how proJeKt: humAnIty deploys, tests, outreaches, and archives. These are not abstract frameworks — they are running protocols with defined steps, accountability checkpoints, and provenance logging at every stage.</p>
-    <p style="margin-top:var(--sp4);font-size:var(--text-sm)"><a href="https://github.com/thejkunkel-cmd/jrk-enterprises/tree/main/04_station-architecture" target="_blank" style="color:var(--gold)">View source → 04_station-architecture/ · 05_outreach/ · 07_resonance-logs/</a></p>
+    <p style="margin-top:var(--sp4);font-size:var(--text-sm)"><a href="https://github.com/thejkunkel-cmd/jrk-enterprises/tree/main/04_station-architecture" target="_blank" style="color:var(--jrk-gold)">View source → 04_station-architecture/ · 05_outreach/ · 07_resonance-logs/</a></p>
     <div class="fw-grid" style="margin-top:var(--sp10)">
       <div class="fw-card">
         <div class="fw-n">I</div>
@@ -628,7 +692,6 @@ footer strong{color:var(--muted);font-weight:500}
       </div>
     </div>
 
-    <!-- ↓ triangle-architecture.png inserted here -->
     <div class="diagram-frame">
       <img
         src="triangle-architecture.png"
@@ -647,12 +710,13 @@ footer strong{color:var(--muted);font-weight:500}
 
 <hr class="rule-gold">
 
-<!-- ═══ §7 EVALUATION ═══ -->
+<!-- ═══ §7 EVALUATION 🔺🔺 ═══ -->
 <section class="chapter" id="evaluation">
   <div class="chapter-inner">
     <div class="chapter-header">
       <span class="ch-num">§7</span>
       <span class="ch-divider"></span>
+      <span class="ch-symbol ch-symbol-red" aria-label="VELA Red channel">🔺🔺</span>
       <span class="ch-label">Evaluation</span>
     </div>
     <h2 class="ch-title">Microsoft vs. Perplexity: Eight-Layer Assessment.</h2>
@@ -669,60 +733,15 @@ footer strong{color:var(--muted);font-weight:500}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><span class="layer-num">01</span> Infrastructure</td>
-            <td><span class="score-badge">4/5</span></td>
-            <td><span class="score-badge">3/5</span></td>
-            <td>Microsoft</td>
-          </tr>
-          <tr>
-            <td><span class="layer-num">02</span> Model Selection</td>
-            <td><span class="score-badge">4/5</span></td>
-            <td><span class="score-badge">3/5</span></td>
-            <td>Microsoft</td>
-          </tr>
-          <tr>
-            <td><span class="layer-num">03</span> Orchestration</td>
-            <td><span class="score-badge">4/5</span></td>
-            <td><span class="score-badge">3/5</span></td>
-            <td>Microsoft</td>
-          </tr>
-          <tr>
-            <td><span class="layer-num">04</span> Data</td>
-            <td><span class="score-badge">3/5</span></td>
-            <td><span class="score-badge score-green">4/5</span></td>
-            <td>Perplexity</td>
-          </tr>
-          <tr>
-            <td><span class="layer-num">05</span> Application</td>
-            <td><span class="score-badge">3/5</span></td>
-            <td><span class="score-badge score-green">4/5</span></td>
-            <td>Perplexity</td>
-          </tr>
-          <tr>
-            <td><span class="layer-num">06</span> Evaluation</td>
-            <td><span class="score-badge score-low">3/5</span></td>
-            <td><span class="score-badge score-low">2/5</span></td>
-            <td>Tied (low)</td>
-          </tr>
-          <tr>
-            <td><span class="layer-num">07</span> Attachment</td>
-            <td><span class="score-badge score-low">2/5</span></td>
-            <td><span class="score-badge">3/5</span></td>
-            <td>Perplexity</td>
-          </tr>
-          <tr>
-            <td><span class="layer-num">08</span> Humanity</td>
-            <td><span class="score-badge score-low">2/5</span></td>
-            <td><span class="score-badge">3/5</span></td>
-            <td>Perplexity</td>
-          </tr>
-          <tr class="eval-total">
-            <td><strong>Weighted Total</strong></td>
-            <td><strong>3.10</strong></td>
-            <td><strong>3.05</strong></td>
-            <td>Near parity</td>
-          </tr>
+          <tr><td><span class="layer-num">01</span> Infrastructure</td><td><span class="score-badge">4/5</span></td><td><span class="score-badge">3/5</span></td><td>Microsoft</td></tr>
+          <tr><td><span class="layer-num">02</span> Model Selection</td><td><span class="score-badge">4/5</span></td><td><span class="score-badge">3/5</span></td><td>Microsoft</td></tr>
+          <tr><td><span class="layer-num">03</span> Orchestration</td><td><span class="score-badge">4/5</span></td><td><span class="score-badge">3/5</span></td><td>Microsoft</td></tr>
+          <tr><td><span class="layer-num">04</span> Data</td><td><span class="score-badge">3/5</span></td><td><span class="score-badge score-green">4/5</span></td><td>Perplexity</td></tr>
+          <tr><td><span class="layer-num">05</span> Application</td><td><span class="score-badge">3/5</span></td><td><span class="score-badge score-green">4/5</span></td><td>Perplexity</td></tr>
+          <tr><td><span class="layer-num">06</span> Evaluation</td><td><span class="score-badge score-low">3/5</span></td><td><span class="score-badge score-low">2/5</span></td><td>Tied (low)</td></tr>
+          <tr><td><span class="layer-num">07</span> Attachment</td><td><span class="score-badge score-low">2/5</span></td><td><span class="score-badge">3/5</span></td><td>Perplexity</td></tr>
+          <tr><td><span class="layer-num">08</span> Humanity</td><td><span class="score-badge score-low">2/5</span></td><td><span class="score-badge">3/5</span></td><td>Perplexity</td></tr>
+          <tr class="eval-total"><td><strong>Weighted Total</strong></td><td><strong>3.10</strong></td><td><strong>3.05</strong></td><td>Near parity</td></tr>
         </tbody>
       </table>
     </div>
@@ -742,7 +761,7 @@ footer strong{color:var(--muted);font-weight:500}
       <blockquote>&#8220;These are different tools for different purposes. The score gap is near parity &mdash; but the direction of each platform&#8217;s values is not.&#8221;</blockquote>
       <cite>Microsoft vs. Perplexity Evaluation &middot; JRK Enterprises &middot; 02_evaluation/microsoft-vs-perplexity.md</cite>
     </div>
-    <p style="margin-top:var(--sp6)"><a href="https://github.com/thejkunkel-cmd/jrk-enterprises/blob/main/02_evaluation/microsoft-vs-perplexity.md" style="color:var(--gold)">View full evaluation source &rarr; 02_evaluation/microsoft-vs-perplexity.md</a></p>
+    <p style="margin-top:var(--sp6)"><a href="https://github.com/thejkunkel-cmd/jrk-enterprises/blob/main/02_evaluation/microsoft-vs-perplexity.md" style="color:var(--jrk-gold)">View full evaluation source &rarr; 02_evaluation/microsoft-vs-perplexity.md</a></p>
   </div>
 </section>
 
