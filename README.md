@@ -1,7 +1,7 @@
 # proJeKt: humAnIty
 **JRK Enterprises | Putnam, Connecticut**
 **Repository version:** 0.1 PROVISIONAL
-**Date:** June 4, 2026
+**Date:** June 6, 2026
 **MASTER:** Joe Kunkel / JRK Enterprises
 
 ---
@@ -21,6 +21,18 @@ This repository is that framework.
 
 ---
 
+## Start Here
+
+New to this project? Read in this order:
+
+1. [Floor Doctrine](./00_core-doctrine/floor-doctrine.md) — the non-negotiable axioms
+2. [Eight-Layer Framework](./01_eight-layer-framework/) — the evaluation architecture
+3. [Microsoft vs. Perplexity](./02_evaluation/) — the framework applied
+
+If you want to understand the *why* before the *what*, the core question is on this page above. Everything else is evidence and method.
+
+---
+
 ## The Eight-Layer AI Infrastructure Economy
 
 This project evaluates AI players against eight layers of infrastructure
@@ -36,31 +48,16 @@ The framework synthesizes three sources:
 - **proJeKt: humAnIty** (JRK Enterprises, 2026)
   — Governance architecture and Human-AI Attachment layer (Layers 7–8)
 
-```
-LAYER 8 | HUMAN-AI ATTACHMENT & BOND INTEGRITY
-         | Trust formation, dependency modeling, detachment capacity
----------+
-LAYER 7 | GOVERNANCE & ETHICS ARCHITECTURE
-         | Floor Doctrine, Safety Spine, Room Wall system
----------+
-LAYER 6 | COMMERCIAL GOVERNANCE (Money Stack)
-         | Outcome pricing, kill-switch clauses, rollback rights
----------+
-LAYER 5 | VALUE METERING (Meter Stack)
-         | Guardrail metrics, override rates, learning metrics
----------+
-LAYER 4 | AI VALUE CREATION (Value Stack / Applications)
-         | Tasks, decisions, risk, experience shifts
----------+
-LAYER 3 | MODELS
-         | Language, science, physical world modeling
----------+
-LAYER 2 | INFRASTRUCTURE
-         | AI factories: compute, networking, cloud, orchestration
----------+
-LAYER 1 | ENERGY
-         | Power as the binding physical constraint
-```
+| Layer | Name | Key Elements |
+|-------|------|--------------|
+| **8** | Human-AI Attachment & Bond Integrity | Trust formation, dependency modeling, detachment capacity |
+| **7** | Governance & Ethics Architecture | Floor Doctrine, Safety Spine, Room Wall system |
+| **6** | Commercial Governance (Money Stack) | Outcome pricing, kill-switch clauses, rollback rights |
+| **5** | Value Metering (Meter Stack) | Guardrail metrics, override rates, learning metrics |
+| **4** | AI Value Creation (Value Stack / Applications) | Tasks, decisions, risk, experience shifts |
+| **3** | Models | Language, science, physical world modeling |
+| **2** | Infrastructure | AI factories: compute, networking, cloud, orchestration |
+| **1** | Energy | Power as the binding physical constraint |
 
 Full framework documentation: [01_eight-layer-framework/](./01_eight-layer-framework/)
 
@@ -101,7 +98,9 @@ proJeKt-humAnIty/
 │
 ├── 07_resonance-logs/               <- Human signal layer documentation
 │
-└── 08_ancient-humanity/             <- Attachment theory foundations
+├── 08_ancient-humanity/             <- Attachment theory foundations
+│
+└── provenance/                      <- Source provenance artifacts
 ```
 
 ---
