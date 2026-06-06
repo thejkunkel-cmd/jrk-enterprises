@@ -117,6 +117,24 @@ attribution technically harder, this project documents more carefully
 As the evaluation and framework develop, additional source entries
 will be added here. All entries follow the SOURCE-XXX format above.
 
+### SOURCE-003
+
+**AI System:** ChatGPT (OpenAI)  
+**Role:** AI Image Generation  
+**Contribution to this project:** Website visual assets — hero illustration, triangle-architecture diagram, eight-layer-stack visualization  
+**Usage:** Three AI-generated images (1792×1024px) created via ChatGPT for jrk-enterprises GitHub Pages site  
+**Attribution:** AI-generated content via ChatGPT prompts by Joe Kunkel / JRK Enterprises  
+**Files:**  
+- `hero.png` — Wide hero image featuring "prəjɛkt: humʌnɪty • June 2026" tagline  
+- `triangle-architecture.png` — Governance architecture visualization  
+- `eight-layer-stack.png` — Eight-layer framework visual representation  
+
+**Date Added:** June 6, 2026  
+**Commit Reference:** COMMIT 34 (feat(images): add wide hero illustration)  
+
+**Transparency Note:** These images were generated using AI tools and are disclosed as such. They represent visual interpretations of framework concepts developed by Joe Kunkel / JRK Enterprises. No copyrighted external visual content was used as source material.
+
+
 ---
 
 *This document is controlled by MASTER (Joe Kunkel / JRK Enterprises).*
