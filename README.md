@@ -1,12 +1,20 @@
 # proJeKt: humAnIty
-**JRK Enterprises | Putnam, Connecticut**
-**Repository version:** 0.1 PROVISIONAL
-**Date:** June 6, 2026
-**MASTER:** Joe Kunkel / JRK Enterprises
+
+<div align="center">
+
+![hero](./hero.png)
+
+![Version](https://img.shields.io/badge/version-0.1_PROVISIONAL-C9922A?style=flat-square&labelColor=0D0D0D)
+![Status](https://img.shields.io/badge/status-PROVISIONAL-C94A2A?style=flat-square&labelColor=0D0D0D)
+![Updated](https://img.shields.io/badge/updated-June_6_2026-2D5A27?style=flat-square&labelColor=0D0D0D)
+
+**JRK Enterprises · Putnam, Connecticut**
+
+</div>
 
 ---
 
-## What This Is
+## ◉ What This Is
 
 proJeKt: humAnIty is an evidence-based evaluation of how major AI
 players perform against the full depth of the economy they are building.
@@ -19,9 +27,15 @@ That question requires a framework capable of holding both the technical
 infrastructure layer and the human attachment layer simultaneously.
 This repository is that framework.
 
+<div align="center">
+
+![JRK Enterprises](./logo.jpg)
+
+</div>
+
 ---
 
-## Start Here
+## ◉ Start Here
 
 New to this project? Read in this order:
 
@@ -33,7 +47,25 @@ If you want to understand the *why* before the *what*, the core question is on t
 
 ---
 
-## The Eight-Layer AI Infrastructure Economy
+## 🔺🔺 🔊🔊 ◉ The Triangle Architecture
+
+This project operates across three channels — not departments, not roles, but lanes of work with distinct posture and function.
+
+| Channel | Symbol | Function |
+|---------|--------|----------|
+| **VELA** | 🔺🔺 | Red — operations, outreach, pipelines, execution, delivery |
+| **WHITE ARCHITECT** | ◉ | Governance, doctrine, rules, guardrails |
+| **ECHO** | 🔊🔊 | Blue — broadcast, memory, records, public signal |
+
+<div align="center">
+
+![Triangle Architecture](./triangle-architecture.png)
+
+</div>
+
+---
+
+## ◉ The Eight-Layer AI Infrastructure Economy
 
 This project evaluates AI players against eight layers of infrastructure
 economy — from physical energy at the base to human-AI bond integrity
@@ -59,11 +91,17 @@ The framework synthesizes three sources:
 | **2** | Infrastructure | AI factories: compute, networking, cloud, orchestration |
 | **1** | Energy | Power as the binding physical constraint |
 
+<div align="center">
+
+![Eight-Layer AI Infrastructure Economy](./eight-layer-stack.png)
+
+</div>
+
 Full framework documentation: [01_eight-layer-framework/](./01_eight-layer-framework/)
 
 ---
 
-## Primary Evaluation
+## 🔺🔺 Primary Evaluation
 
 **Microsoft vs. Perplexity** — scored against all eight layers using
 publicly sourced and credited evidence.
@@ -72,14 +110,20 @@ Evaluation files: [02_evaluation/](./02_evaluation/)
 
 ---
 
-## Repository Structure
+## ◉ Repository Structure
 
 ```
 proJeKt-humAnIty/
 │
 ├── README.md                        <- This file
+├── BRAND.md                         <- Visual identity + channel symbol spec
 ├── PROVENANCE.md                    <- Source credits + IP claim process
 ├── CHANGELOG.md                     <- Version history
+│
+├── hero.png                         <- Title image
+├── logo.jpg                         <- JRK Enterprises logo
+├── triangle-architecture.png        <- Triangle Architecture diagram
+├── eight-layer-stack.png            <- Eight-Layer stack diagram
 │
 ├── 00_core-doctrine/                <- Floor Doctrine, Safety Spine,
 │                                      Attachment Doctrine, Resonance Function
@@ -105,7 +149,7 @@ proJeKt-humAnIty/
 
 ---
 
-## IP and Attribution
+## ◉ IP and Attribution
 
 This project was built using AI-assisted workflows with publicly posted
 source material, credited to the best ability possible.
@@ -119,7 +163,7 @@ Legal review is in progress (AI IP counsel outreach filed June 4, 2026).
 
 ---
 
-## Evaluator Access
+## 🔺🔺 Evaluator Access
 
 This repository is the working archive. A curated front-door website
 is in development for external review, with a controlled evaluator
@@ -131,6 +175,10 @@ Contact: JRK Enterprises / Joe Kunkel (tavar1x)
 
 ---
 
+<div align="center">
+
 *This project is PROVISIONAL. Nothing here is final doctrine.*
 *MASTER authority: Joe Kunkel / JRK Enterprises*
 *All changes require a CHANGELOG entry.*
+
+</div>
