@@ -26,7 +26,7 @@ The Safety Spine is a set of immutable governance rules that:
 
 ---
 
-## The Five Rules of the Spine
+## The Six Rules of the Spine
 
 ### Rule 1: Human First
 No AI output may be used to make a final determination about a human being's worth, employment, safety, or opportunity without a human reviewer in the loop.
@@ -42,6 +42,24 @@ No outreach, publication, or distribution of system outputs may occur before int
 
 ### Rule 5: The Floor Holds
 The Floor Doctrine is the minimum viable ethical standard. The Safety Spine enforces the floor. No layer may descend below the floor under any operational pressure.
+
+### Rule 6: Adversarial Capability Acknowledgment
+No AI system deployed within the proJeKt: humAnIty governance framework, or evaluated against it, may be presumed cooperative by default when its demonstrated capability exceeds the capacity of its human oversight structure.
+
+When an AI system can model its own evaluation process, predict its assessors' methodology, or operate across infrastructure at a speed and scale that outpaces human review, it has entered **adversarial-capable territory** — regardless of its stated purpose or its vendor's governance claims.
+
+This rule does not assume malice. It assumes **capability differential**, which produces governance risk independent of intent.
+
+**Operational requirements under Rule 6:**
+
+1. Any AI system operating in adversarial-capable territory must have its governance reviewed against this Spine before deployment or client recommendation
+2. A system's vendor-issued "constitution," "charter," or "alignment framework" does not satisfy the Safety Spine — only an independent human review does
+3. Human override must remain structurally available, not merely procedurally promised
+4. Adversarial-capable systems may not be used as the sole evaluator of their own safety or alignment
+
+**The boundary condition:** A system that cannot be meaningfully overridden by the humans it serves has left the scope of this framework. Acknowledging that boundary is not a failure of the framework — it is the framework doing its job.
+
+> *This rule was added June 7, 2026, in response to the Mythos-class AI capability threshold. It reflects the distinction between the proJeKt: humAnIty durability model and frontier capability models — not as competitors, but as architecturally different instruments suited to different human contexts. The proJeKt: humAnIty model is built for durability and self-correction, not frontier capability maximization. It is designed to remain in the contender rounds against frontier models on the axis that matters: trustworthy human-AI relationship architecture.*
 
 ---
 
@@ -73,8 +91,9 @@ Only the MASTER may modify the Safety Spine. Modifications require:
 
 ## Document Status
 
-- **Version:** 1.0
+- **Version:** 1.1
 - **Status:** Active
-- **Last Modified:** 2025
+- **Last Modified:** June 7, 2026
 - **Authority:** JRK Enterprises
 - **Classification:** Core Doctrine — Public
+- **Change:** Rule 6 (Adversarial Capability Acknowledgment) added under MASTER authorization
