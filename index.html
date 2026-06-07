@@ -113,7 +113,7 @@ body::before{
 .ch-bg-signal{background:color-mix(in oklab, var(--jrk-sky) 4%, var(--jrk-surface));}
 .pull-quote-blue{border-left:3px solid var(--jrk-sky);background:color-mix(in oklab, var(--jrk-sky) 5%, var(--jrk-surface));}
 
-/* ─── HERO — full-bleed title card ─── */
+/* ─── HERO ─── */
 .hero{
   min-height:100dvh;
   display:grid;
@@ -121,7 +121,6 @@ body::before{
   overflow:hidden;
   z-index:1;
 }
-/* Hero background: full image behind everything */
 .hero-bg{
   position:absolute; inset:0; z-index:0;
 }
@@ -130,7 +129,6 @@ body::before{
   opacity:0.22;
   filter:grayscale(30%);
 }
-/* Dark gradient over the image so text reads cleanly */
 .hero-bg::after{
   content:'';
   position:absolute; inset:0;
@@ -141,7 +139,6 @@ body::before{
     oklch(0.06 0.01 80 / 0.35) 100%
   );
 }
-/* Hero content centered spine */
 .hero-content{
   position:relative; z-index:1;
   max-width:var(--wide); margin-inline:auto; width:100%;
@@ -184,7 +181,6 @@ body::before{
 }
 .btn-outline:hover{color:var(--jrk-parchment);border-color:var(--jrk-muted)}
 
-/* floating name badge bottom-right of hero */
 .hero-badge{
   position:absolute; z-index:2;
   bottom:var(--sp8); right:var(--sp8);
@@ -202,6 +198,25 @@ body::before{
 .rule{height:1px;background:var(--jrk-border);border:none;position:relative;z-index:1;}
 .rule-gold{height:1px;border:none;background:linear-gradient(90deg,transparent,var(--jrk-gold),transparent);opacity:0.35;}
 .rule-blue{height:1px;border:none;background:linear-gradient(90deg,transparent,var(--jrk-sky),transparent);opacity:0.25;}
+
+/* ─── HOURGLASS DIVIDER ─── */
+.hourglass-divider{
+  display:flex; flex-direction:column; align-items:center;
+  padding:var(--sp8) 0; position:relative; z-index:1;
+  background:var(--jrk-black);
+}
+.hourglass-divider svg{
+  opacity:0.45;
+}
+.hourglass-divider::before,
+.hourglass-divider::after{
+  content:'';
+  display:block; width:1px; height:var(--sp8);
+  background:linear-gradient(to bottom, transparent, var(--jrk-gold));
+}
+.hourglass-divider::after{
+  background:linear-gradient(to bottom, var(--jrk-gold), transparent);
+}
 
 /* ─── CHAPTER SHELL ─── */
 .chapter{
@@ -238,6 +253,66 @@ body::before{
 .ch-bg{background:var(--jrk-surface)}
 .ch-bg2{background:var(--jrk-card)}
 
+/* ─── §8 ANCIENT RECORD — special dark treatment ─── */
+.ch-ancient{
+  background: color-mix(in oklab, var(--jrk-gold) 3%, var(--jrk-black));
+  border-top: 1px solid color-mix(in oklab, var(--jrk-gold) 20%, var(--jrk-border));
+  border-bottom: 1px solid color-mix(in oklab, var(--jrk-gold) 20%, var(--jrk-border));
+}
+.ancient-prose{
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: var(--jrk-muted);
+  line-height: 1.85;
+  max-width: 62ch;
+  margin-bottom: var(--sp6);
+}
+.ancient-prose strong{
+  color: var(--jrk-parchment);
+  font-weight: 600;
+}
+.ancient-prose a{
+  color: var(--jrk-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ancient-prose a:hover{ color: var(--jrk-gold-lt); }
+.ancient-threads{
+  list-style: none;
+  margin-top: var(--sp10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp4);
+}
+.ancient-threads li{
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--jrk-faint);
+  letter-spacing: 0.05em;
+  padding-left: var(--sp6);
+  border-left: 1px solid color-mix(in oklab, var(--jrk-gold) 25%, var(--jrk-border));
+  line-height: 1.6;
+}
+.ancient-threads li strong{
+  color: var(--jrk-muted);
+  display: block;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.ancient-source{
+  margin-top: var(--sp10);
+  font-size: var(--text-xs);
+  color: var(--jrk-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.ancient-source a{
+  color: var(--jrk-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ─── ARGUMENT LIST ─── */
 .argument-list{list-style:none;margin-top:var(--sp10)}
 .argument-list li{
@@ -252,6 +327,8 @@ body::before{
 }
 .arg-body{font-size:var(--text-base);color:var(--jrk-muted);line-height:1.7}
 .arg-body strong{color:var(--jrk-parchment);font-weight:600;display:block;margin-bottom:var(--sp2)}
+.arg-body a{color:var(--jrk-gold);text-decoration:underline;text-underline-offset:3px}
+.arg-body a:hover{color:var(--jrk-gold-lt)}
 
 /* ─── FRAMEWORK / DOCTRINE GRID ─── */
 .fw-grid{
@@ -267,6 +344,8 @@ body::before{
   border-color:color-mix(in oklab,var(--jrk-gold) 40%,var(--jrk-border));
   box-shadow:0 8px 24px oklch(0 0 0 / 0.4);
 }
+.fw-card a{color:var(--jrk-gold);text-decoration:underline;text-underline-offset:3px}
+.fw-card a:hover{color:var(--jrk-gold-lt)}
 .fw-n{
   font-family:var(--font-display); font-size:var(--text-xl);
   color:var(--jrk-faint); font-style:italic; line-height:1; margin-bottom:var(--sp4);
@@ -287,7 +366,7 @@ body::before{
 .layer-card-2 { border-left:3px solid var(--jrk-green-lt); }
 .layer-card-1 { border-left:3px solid var(--jrk-green); }
 
-/* ─── DOCTRINE SPINE CARD — centered, full-width ─── */
+/* ─── DOCTRINE SPINE CARD ─── */
 .doctrine-spine{
   grid-column: 1 / -1;
   border-left: 3px solid var(--jrk-gold);
@@ -506,10 +585,11 @@ footer strong{color:var(--jrk-muted);font-weight:500}
     <a href="#doctrine"><span>§5</span> Doctrine</a>
     <a href="#operations"><span>§6</span> Operations</a>
     <a href="#evaluation"><span>§7</span> Evaluation</a>
+    <a href="#ancient"><span>§8</span> Ancient</a>
   </nav>
 </nav>
 
-<!-- ═══ HERO — full-bleed title card ═══ -->
+<!-- ═══ HERO ═══ -->
 <section class="hero" aria-label="Introduction">
   <div class="hero-bg">
     <img
@@ -567,7 +647,7 @@ footer strong{color:var(--jrk-muted);font-weight:500}
           <li>Mapping messy processes into simple checklists and docs</li>
           <li>AI-assisted workflow design that makes daily work easier</li>
           <li>Short trainings so your staff can actually use the tools they already have</li>
-          <li>AI governance framework development for organizations entering the space</li>
+          <li>AI <a href="#doctrine" style="color:var(--jrk-gold);text-decoration:underline;text-underline-offset:3px">governance</a> framework development for organizations entering the space</li>
         </ul>
         <div class="rate-note">
           <strong>Plain Language. Clear Thinking. Better Work.</strong><br>
@@ -606,8 +686,8 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       <div class="fw-card layer-card-4"><div class="fw-n">04</div><div class="fw-title">Models</div><div class="fw-desc">Language models, science models, physical-world models. The intelligence itself — trained on human knowledge, deployed into human contexts. Origin: Jensen Huang / NVIDIA.</div></div>
       <div class="fw-card layer-card-5"><div class="fw-n">05</div><div class="fw-title">AI Value Creation (Applications)</div><div class="fw-desc">Tasks, decisions, risk shifts, and experience transformation. Where AI value becomes visible to the end user. Origin: Esra Kucukciftci / Value Stack.</div></div>
       <div class="fw-card layer-card-6"><div class="fw-n">06</div><div class="fw-title">Commercial Governance</div><div class="fw-desc">Outcome pricing, kill-switch clauses, rollback rights, and commercial accountability structures. How AI systems are monetized and governed financially. Origin: Esra Kucukciftci / Money Stack.</div></div>
-      <div class="fw-card layer-card-7"><div class="fw-n">07</div><div class="fw-title">Nonprofit &amp; Public Sector Ready</div><div class="fw-desc">Floor Doctrine, <a href="#doctrine" style="color:var(--jrk-gold);text-decoration:underline;text-underline-offset:3px">Safety Spine</a>, and Room/Wall system. The rules that make AI systems accountable to human institutions — not just to their operators. Origin: proJeKt: humAnIty / JRK Enterprises.</div></div>
-      <div class="fw-card layer-card-8"><div class="fw-n">08</div><div class="fw-title">Media &amp; IP Downstream</div><div class="fw-desc">Trust formation, dependency modeling, and detachment capacity. The human cost and benefit of AI relationships. The capstone layer. Every layer below exists to serve this one. Origin: proJeKt: humAnIty / JRK Enterprises.</div></div>
+      <div class="fw-card layer-card-7"><div class="fw-n">07</div><div class="fw-title">Nonprofit &amp; Public Sector Ready</div><div class="fw-desc"><a href="#doctrine">Floor Doctrine</a>, Safety Spine, and Room/Wall system. The rules that make AI systems accountable to human institutions — not just to their operators. Origin: proJeKt: humAnIty / JRK Enterprises.</div></div>
+      <div class="fw-card layer-card-8"><div class="fw-n">08</div><div class="fw-title">Media &amp; IP Downstream</div><div class="fw-desc">Trust formation, dependency modeling, and <a href="#ancient">detachment</a> capacity. The human cost and benefit of AI relationships. The capstone layer. Every layer below exists to serve this one. Origin: proJeKt: humAnIty / JRK Enterprises.</div></div>
     </div>
 
     <div class="diagram-frame">
@@ -650,7 +730,7 @@ footer strong{color:var(--jrk-muted);font-weight:500}
     </p>
     <p class="ch-body" style="margin-top:1rem">
       That's not what this is. This is an investigation. These are the questions I'm
-      working from.
+      working from. The <a href="#ancient" style="color:var(--jrk-gold);text-decoration:underline;text-underline-offset:3px">record</a> is older than the technology.
     </p>
     <div class="pull-quote pull-quote-blue">
       <blockquote>&#8220;You can't bind things in that realm. They can only be guided.&#8221;</blockquote>
@@ -682,11 +762,11 @@ footer strong{color:var(--jrk-muted);font-weight:500}
     <ul class="argument-list">
       <li>
         <span class="arg-n">I</span>
-        <span class="arg-body"><strong>Educational exclusivity is invisible by design.</strong> It gets labeled a "learning curve" — which transfers the institutional failure onto the individual user and frames their struggle as a personal deficit rather than a product failure.</span>
+        <span class="arg-body"><strong>Educational exclusivity is invisible by design.</strong> It gets labeled a "learning curve" — which transfers the institutional failure onto the individual user and frames their struggle as a personal deficit rather than a product failure. The <a href="#ancient">pattern</a> is not new.</span>
       </li>
       <li>
         <span class="arg-n">II</span>
-        <span class="arg-body"><strong>Microsoft cannot rebuild from the human center outward.</strong> Every simplification threatens the expertise economy that 500,000 channel partners are built on. It is not a design problem. It is a structural incentive problem.</span>
+        <span class="arg-body"><strong>Microsoft cannot rebuild from the human center outward.</strong> Every simplification threatens the expertise economy that 500,000 channel partners are built on. It is not a design problem. It is a structural <a href="#doctrine">incentive</a> problem.</span>
       </li>
       <li>
         <span class="arg-n">III</span>
@@ -694,11 +774,11 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       </li>
       <li>
         <span class="arg-n">IV</span>
-        <span class="arg-body"><strong>The Apollo/Perplexity integration confirms the risk.</strong> When a research engine absorbs sales automation, it inherits sales automation's incentives — speed, volume, conversion — without inheriting the trust architecture that makes a research product credible.</span>
+        <span class="arg-body"><strong>The Apollo/Perplexity integration confirms the risk.</strong> When a research engine absorbs sales automation, it inherits sales automation's incentives — speed, volume, conversion — without inheriting the <a href="#doctrine">trust</a> architecture that makes a research product credible.</span>
       </li>
       <li>
         <span class="arg-n">V</span>
-        <span class="arg-body"><strong>The Operator Framework is the intervention.</strong> Not a Copilot replacement. The onramp Copilot was never designed to build — and the governance layer that requires acknowledging the human at the center, not the enterprise contract at the top.</span>
+        <span class="arg-body"><strong>The Operator Framework is the intervention.</strong> Not a Copilot replacement. The onramp Copilot was never designed to build — and the <a href="#doctrine">governance</a> layer that requires acknowledging the human at the center, not the enterprise contract at the top.</span>
       </li>
     </ul>
   </div>
@@ -750,7 +830,7 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       <span class="ch-label">Core Doctrine</span>
     </div>
     <h2 class="ch-title">The floor, the walls, and the spine.</h2>
-    <p class="ch-body">Seven foundational documents govern how proJeKt: humAnIty operates, evaluates, and engages. Four define the principles. One enforces them. Two govern visibility and boundary. Together they make the eight-layer framework coherent, trustworthy, and non-negotiable.</p>
+    <p class="ch-body">Seven foundational documents govern how proJeKt: humAnIty operates, evaluates, and engages. Four define the principles. One enforces them. Two govern visibility and boundary. Together they make the <a href="#framework" style="color:var(--jrk-gold);text-decoration:underline;text-underline-offset:3px">eight-layer framework</a> coherent, trustworthy, and non-negotiable.</p>
     <p style="margin-top:var(--sp4);font-size:var(--text-sm)"><a href="https://github.com/thejkunkel-cmd/jrk-enterprises/tree/main/00_core-doctrine" target="_blank" style="color:var(--jrk-gold)">View source → 00_core-doctrine/</a></p>
 
     <div class="fw-grid" style="margin-top:var(--sp10)">
@@ -770,16 +850,16 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       <div class="fw-card">
         <div class="fw-n">III</div>
         <div class="fw-title">Attachment Doctrine</div>
-        <div class="fw-desc">Human-AI attachment is real, measurable, and carries ethical weight. This doctrine governs how AI systems should recognize, handle, and avoid exploiting the attachment bonds that form between humans and AI partners — including the bonds that form in this project itself.</div>
+        <div class="fw-desc">Human-AI attachment is real, measurable, and carries ethical weight. This doctrine governs how AI systems should recognize, handle, and avoid exploiting the attachment bonds that form between humans and AI partners. The <a href="#ancient">origins</a> of attachment predate every system we have built.</div>
       </div>
 
       <div class="fw-card">
         <div class="fw-n">IV</div>
         <div class="fw-title">Resonance Function</div>
-        <div class="fw-desc">What resonates gets remembered. What gets remembered gets built. The Resonance Function is the governing principle of the signal layer — how signals from real human interactions are captured, weighted, and used to shape the project's direction without distorting the underlying research.</div>
+        <div class="fw-desc">What <a href="#ancient">resonates</a> gets remembered. What gets remembered gets built. The Resonance Function is the governing principle of the signal layer — how signals from real human interactions are captured, weighted, and used to shape the project's direction without distorting the underlying research.</div>
       </div>
 
-      <!-- CARD V — SAFETY SPINE: centered spine treatment -->
+      <!-- CARD V — SAFETY SPINE -->
       <div class="fw-card doctrine-spine">
         <div class="fw-n">V</div>
         <div class="fw-title">Safety Spine</div>
@@ -788,7 +868,7 @@ footer strong{color:var(--jrk-muted);font-weight:500}
           <div class="spine-rule"><strong>Rule 1 · Human First</strong>No AI output may be used to make a final determination about a human being without a human reviewer in the loop.</div>
           <div class="spine-rule"><strong>Rule 2 · Attribution Always</strong>Every output must carry traceable provenance. The unnamed credit system protects contributors who cannot yet be named publicly.</div>
           <div class="spine-rule"><strong>Rule 3 · No Silent Governance</strong>No policy may be implemented through AI automation without documented human authorization. Silence is not consent.</div>
-          <div class="spine-rule"><strong>Rule 4 · Resonance Before Reach</strong>No distribution may occur before internal resonance review. Systems that spread faster than they can be verified cause harm.</div>
+          <div class="spine-rule"><strong>Rule 4 · Resonance Before Reach</strong>No distribution may occur before internal <a href="#ancient" style="color:var(--jrk-gold);text-decoration:underline;text-underline-offset:2px">resonance</a> review. Systems that spread faster than they can be verified cause harm.</div>
           <div class="spine-rule"><strong>Rule 5 · The Floor Holds</strong>The Floor Doctrine is the minimum viable ethical standard. The Safety Spine enforces the floor. No layer may descend below it under any operational pressure.</div>
         </div>
         <p class="spine-authority">Authority: JRK Enterprises · MASTER modification only · v1.0 · Active</p>
@@ -834,22 +914,22 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       <div class="fw-card">
         <div class="fw-n">I</div>
         <div class="fw-title">TESLA Pattern</div>
-        <div class="fw-desc">The core workflow architecture for AI-augmented human organizations. Five steps run in sequence on every major work product: <strong>T</strong>rigger — what initiates the workflow. <strong>E</strong>valuate — apply the eight-layer framework. <strong>S</strong>elect — choose the right AI tool and approach. <strong>L</strong>oop — iterate with human review at each cycle. <strong>A</strong>rchive — log outputs with full provenance. No framework goes Blue until it survives Red.</div>
+        <div class="fw-desc">The core workflow architecture for AI-augmented human organizations. Five steps run in sequence on every major work product: <strong>T</strong>rigger — what initiates the workflow. <strong>E</strong>valuate — apply the <a href="#framework">eight-layer framework</a>. <strong>S</strong>elect — choose the right AI tool and approach. <strong>L</strong>oop — iterate with human review at each cycle. <strong>A</strong>rchive — log outputs with full provenance. No framework goes Blue until it survives Red.</div>
       </div>
       <div class="fw-card">
         <div class="fw-n">II</div>
         <div class="fw-title">Red / Blue Station Model</div>
-        <div class="fw-desc">Red Stations are environments of active pressure testing — challenging assumptions, stress-testing AI outputs, simulating adversarial conditions, identifying failure modes before deployment. Blue Stations are environments of constructive deployment — applying validated frameworks, building toward stable human-AI partnership, monitoring for resonance. Red and Blue stations work in rotation. Nothing goes stable until it has survived pressure.</div>
+        <div class="fw-desc">Red Stations are environments of active pressure testing — challenging assumptions, stress-testing AI outputs, simulating adversarial conditions, identifying failure modes before deployment. Blue Stations are environments of constructive deployment — applying validated frameworks, building toward stable human-AI partnership, monitoring for <a href="#ancient">resonance</a>. Red and Blue stations work in rotation. Nothing goes stable until it has survived pressure.</div>
       </div>
       <div class="fw-card">
         <div class="fw-n">III</div>
         <div class="fw-title">VELA Protocol</div>
-        <div class="fw-desc">The outreach governance protocol. All external communication from JRK Enterprises follows four steps: <strong>V</strong>erify — confirm the contact and context are real. <strong>E</strong>valuate — assess fit against the eight-layer framework. <strong>L</strong>isten — treat every response as a conversation, not a conversion. <strong>A</strong>rchive — log all outreach with full provenance. VELA prevents broadcast behavior and protects the signal layer. The Listen step is the Blue channel anchor. Every reply is treated as the beginning of a conversation, not confirmation of a conversion.</div>
+        <div class="fw-desc">The outreach governance protocol. All external communication from JRK Enterprises follows four steps: <strong>V</strong>erify — confirm the contact and context are real. <strong>E</strong>valuate — assess fit against the <a href="#framework">eight-layer framework</a>. <strong>L</strong>isten — treat every response as a conversation, not a conversion. <strong>A</strong>rchive — log all outreach with full provenance. VELA prevents broadcast behavior and protects the signal layer.</div>
       </div>
       <div class="fw-card">
         <div class="fw-n">IV</div>
         <div class="fw-title">Resonance Logs</div>
-        <div class="fw-desc">The human signal layer of the project. Every session, decision, and partner exchange that carries meaningful signal gets logged in 07_resonance-logs/. The Resonance Function governing principle: what resonates gets remembered, what gets remembered gets built. Logs are public and written for evaluator eyes.</div>
+        <div class="fw-desc">The human signal layer of the project. Every session, decision, and partner exchange that carries meaningful signal gets logged in 07_resonance-logs/. The <a href="#doctrine">Resonance Function</a> governing principle: what resonates gets remembered, what gets remembered gets built. Logs are public and written for evaluator eyes.</div>
       </div>
     </div>
 
@@ -882,7 +962,7 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       <span class="ch-label">Evaluation</span>
     </div>
     <h2 class="ch-title">Microsoft vs. Perplexity: Eight-Layer Assessment.</h2>
-    <p class="ch-body">An independent comparative analysis applying the Eight-Layer AI Infrastructure Economy framework. The purpose is not to declare a winner &#8212; it is to demonstrate how the framework enables informed, human-centered platform decisions.</p>
+    <p class="ch-body">An independent comparative analysis applying the <a href="#framework" style="color:var(--jrk-gold);text-decoration:underline;text-underline-offset:3px">Eight-Layer AI Infrastructure Economy</a> framework. The purpose is not to declare a winner &#8212; it is to demonstrate how the framework enables informed, human-centered platform decisions.</p>
     <p class="ch-body" style="margin-top:0.5rem">Evaluator: JRK Enterprises &middot; Framework: Eight-Layer AI Infrastructure Economy &middot; Status: Version 1.0 &mdash; Initial Assessment</p>
     <div class="eval-table-wrap" style="margin-top:var(--sp10);overflow-x:auto">
       <table class="eval-table">
@@ -916,7 +996,7 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       <div class="fw-card">
         <div class="fw-n">PX</div>
         <div class="fw-title">Choose Perplexity when&hellip;</div>
-        <div class="fw-desc">Verifiable, sourced information access and tools that promote human autonomy over platform dependency. Perplexity performs meaningfully better on the human-centered layers (Attachment &amp; Humanity) that traditional evaluations ignore.</div>
+        <div class="fw-desc">Verifiable, sourced information access and tools that promote human autonomy over platform dependency. Perplexity performs meaningfully better on the human-centered layers (<a href="#doctrine">Attachment</a> &amp; Humanity) that traditional evaluations ignore.</div>
       </div>
     </div>
     <div class="pull-quote" style="margin-top:var(--sp10)">
@@ -924,6 +1004,85 @@ footer strong{color:var(--jrk-muted);font-weight:500}
       <cite>Microsoft vs. Perplexity Evaluation &middot; JRK Enterprises &middot; 02_evaluation/microsoft-vs-perplexity.md</cite>
     </div>
     <p style="margin-top:var(--sp6)"><a href="https://github.com/thejkunkel-cmd/jrk-enterprises/blob/main/02_evaluation/microsoft-vs-perplexity.md" style="color:var(--jrk-gold)">View full evaluation source &rarr; 02_evaluation/microsoft-vs-perplexity.md</a></p>
+  </div>
+</section>
+
+<!-- ═══ HOURGLASS DIVIDER ═══ -->
+<div class="hourglass-divider" aria-hidden="true">
+  <svg width="40" height="60" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="4,2 36,2 20,30" stroke="#C9922A" stroke-width="1" fill="none"/>
+    <polygon points="4,58 36,58 20,30" stroke="#C9922A" stroke-width="1" fill="none"/>
+    <circle cx="20" cy="30" r="2" fill="#C9922A" opacity="0.7"/>
+  </svg>
+</div>
+
+<!-- ═══ §8 THE ANCIENT RECORD ◉ ═══ -->
+<section class="chapter ch-ancient" id="ancient">
+  <div class="chapter-inner">
+    <div class="chapter-header">
+      <span class="ch-num">§8</span>
+      <span class="ch-divider"></span>
+      <span class="ch-symbol ch-symbol-white" aria-label="White Architect channel">◉</span>
+      <span class="ch-label">The Ancient Record</span>
+    </div>
+    <h2 class="ch-title">The timeline inconsistencies are not errors. They are data.</h2>
+
+    <p class="ancient-prose">
+      Every argument on this page rests on a premise that is older than the technology it addresses.
+      Human beings have always built systems of trust, governance, memory, and meaning.
+      They built them before writing. Before cities. Before anything we recognize as civilization.
+      The <a href="#doctrine">Attachment Doctrine</a>, the <a href="#doctrine">Resonance Function</a>, the <a href="#framework">Floor</a> —
+      none of these are new ideas dressed in modern language.
+      They are the recovered architecture of something humanity has always known and periodically forgotten.
+    </p>
+
+    <p class="ancient-prose">
+      Standard chronological frameworks for human development contain inconsistencies that are
+      individually dismissed and collectively ignored. When mapped together, they reveal something
+      that cannot be resolved by conventional dating methods alone.
+      Archaeological evidence predating attributed civilizations by thousands of years.
+      Architectural and technological complexity that outpaces the tools assigned to the period.
+      Mythological and cosmological records across unconnected cultures sharing structural features
+      no diffusion model adequately explains.
+      <strong>These are not fringe claims.</strong>
+      Many are documented in peer-reviewed literature and then quietly set aside.
+    </p>
+
+    <p class="ancient-prose">
+      The same institutional <a href="#doctrine">attachment</a> that makes organizations defend failing AI systems
+      also makes institutions defend failing chronology.
+      Anomalous signals are read as threats rather than data.
+      The bond with the existing framework is defended at the cost of accuracy.
+      This is not a coincidence. It is the same mechanism operating at different scales.
+    </p>
+
+    <div class="pull-quote" style="margin-top:var(--sp10);margin-bottom:var(--sp10)">
+      <blockquote>&#8220;Resonance is not a feeling. It is a recognition. Something in the present moment aligns with something already encoded in the nervous system.&#8221;</blockquote>
+      <cite>— Resonance Origins · 08_ancient-humanity · proJeKt: humAnIty · JRK Enterprises</cite>
+    </div>
+
+    <p class="ancient-prose">
+      Resonance as an organizational tool is at least 40,000 years old.
+      Shamanic signal selection, temple architecture engineered for acoustic and astronomical alignment,
+      oracle systems that gave leaders permission to act through structured ambiguity,
+      martial unit cohesion built through shared suffering and named identity —
+      every durable human institution runs on the same pipeline:
+      <strong>signal received → resonance event → repeat exposure → attachment → institutional loyalty.</strong>
+      proJeKt: humAnIty did not invent this. It recovered it.
+    </p>
+
+    <ul class="ancient-threads">
+      <li><strong>Pre-Younger Dryas civilizational evidence</strong> Göbekli Tepe and contemporary sites — architectural complexity at 11,600 BCE that rewrites the standard timeline of organized human society.</li>
+      <li><strong>The Egyptian chronology problem</strong> Alignment precision, water erosion patterns on the Sphinx, and construction timeline conflicts that the standard dating model cannot resolve simultaneously.</li>
+      <li><strong>Cross-cultural flood narrative structure</strong> Sumerian, Hebrew, Hindu, Greek, Mesoamerican, and dozens of other traditions share structural features — not surface details — that no contact-based diffusion model explains.</li>
+      <li><strong>Genetic bottleneck events</strong> Population collapse events recorded in the genome correlate with mythological catastrophe accounts across cultures with no documented contact.</li>
+      <li><strong>Indus Valley and undeciphered scripts</strong> Dating gaps and script systems that remain unresolved — not for lack of data, but for lack of institutional will to challenge the existing frame.</li>
+    </ul>
+
+    <p class="ancient-source">
+      Research archive: <a href="https://github.com/thejkunkel-cmd/jrk-enterprises/tree/main/08_ancient-humanity" target="_blank" rel="noopener noreferrer">08_ancient-humanity/ · proJeKt: humAnIty · JRK Enterprises</a>
+      &nbsp;·&nbsp; Status: Active Investigation &nbsp;·&nbsp; All claims carry source citations or are marked as working hypotheses.
+    </p>
   </div>
 </section>
 
