@@ -1,19 +1,17 @@
 # 11_analysis
 
-**Purpose:** Eight-Layer framework analysis outputs, research synthesis, and evaluation artifacts.
+**Purpose:** Eight-Layer framework outputs, evaluation summaries, and applied analysis artifacts produced during active client or project work.
+
+**Access level:** Internal — not public-facing, but not credentialed-restricted.
 
 **What lives here:**
-- Eight-Layer evaluation runs (scored outputs, pattern findings)
-- Research synthesis documents (market, sector, organizational)
-- Competitive and contextual analysis
-- The BSG Stress Test and other framework pressure tests
-- Any analysis produced by or for proJeKt: humAnIty that is not a session log
+- Applied Eight-Layer evaluation outputs (client-adjacent, project-specific)
+- Framework application notes
+- Comparative analysis that supports deliverables
 
-**What does not live here:**
-- Raw session transcripts → `10_session-logs/`
-- Reflections and pattern observations → `12_reflection/`
-- Outreach research → `05_outreach/`
+**What does NOT live here:**
+- Research-grade stress tests and white-paper synthesis → `13_research/`
+- Session logs → `10_session-logs/`
+- Reflections and pattern logs → `12_reflection/`
 
 **Naming convention:** `projekt-humanity_[subject]_[type]_[status]_[YYYY-MM-DD].md`
-
-Example: `projekt-humanity_bsg-stress-test_eight-layer-analysis_VALIDATED_2026-04-26.md`
