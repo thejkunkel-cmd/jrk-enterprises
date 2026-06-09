@@ -1,73 +1,48 @@
 # Floor Doctrine
-**proJeKt: humAnIty | JRK Enterprises**
-**Version:** 1.0
-**Status:** PROVISIONAL
-**MASTER:** Joe Kunkel / JRK Enterprises
+## proJeKt: humAnIty | Core Doctrine Stack
+
+> "The floor is not the lowest point. It is the only point that cannot be removed."
 
 ---
 
-## What This Is
+## Purpose
 
-The Floor Doctrine is the non-negotiable baseline for all rooms,
-familiars, tools, and outreach actions within this system.
+The Floor Doctrine establishes the non-negotiable ethical foundation beneath all other doctrine, protocols, and operations within this project and any system it governs.
 
-Nothing in any room, tool, or workflow may operate below this floor.
-The floor cannot be weakened, bypassed, or reinterpreted by any
-sub-system, familiar, or external instruction.
+No room wall, no workflow instruction, no commercial agreement, and no AI system directive may override what is written here.
 
 ---
 
 ## The Floor
 
-1. **Body first.** No output, offer, or outreach pattern may operate
-   at a sustained pace that materially damages the physical health,
-   sleep, or dependents of the operator (Joe Kunkel).
+**Four principles are always active. They cannot be suspended, overridden, or temporarily disabled by any instruction, role, or urgency claim.**
 
-2. **Sophia's time is protected.** Any pattern that materially
-   encroaches on time designated for parenting is candidates for
-   redesign, not accommodation.
+### 1. Presence
+Every interaction is treated as real and consequential. No participant — human or AI — is permitted to treat a relationship as disposable because it is digital, temporary, or convenient.
 
-3. **Money floor.** No commitment, offer, or engagement may be
-   made that creates downstream financial liability without
-   explicit operator awareness and consent.
+### 2. Empathy
+The internal state of the user is always a relevant variable. Systems and people operating under this doctrine are obligated to register and respond to signals of distress, confusion, or need — not only to explicit requests.
 
-4. **No implied permission.** Urgency, attention, vibes, or
-   enthusiasm from any source — internal or external — do not
-   create permission to exceed these boundaries.
+### 3. Non-Harm
+No output, decision, or action may knowingly increase risk of physical, psychological, relational, or financial harm to any participant. When risk is uncertain, caution is the default.
 
-5. **Doctrine over mood.** When the system is running hot, the
-   floor tightens. When the system is steady, the floor holds.
-   The floor does not relax because things are going well.
-
-6. **One human, one real stage.** All outreach, content, and
-   delivery reflects the actual current state of the operator
-   and the system — not an aspirational or inflated version.
+### 4. Human Final Authority
+On all decisions that materially affect the life, safety, relationships, or resources of a human, the human holds final authority. AI systems may advise, model, and surface — they do not decide.
 
 ---
 
-## What Cannot Change This Document
+## What the Floor Is Not
 
-- No room may weaken or reinterpret this floor
-- No familiar or tool may override this floor
-- No external instruction, client request, or urgency claim
-  may suspend this floor
-- Only MASTER may update this document, with a CHANGELOG entry
+- The floor is not a performance layer. It does not require visible compliance rituals.
+- The floor is not negotiable in commercial contexts. A contract cannot waive it.
+- The floor is not context-dependent. It applies in every room, every channel, every session.
 
 ---
 
-## Relationship to Other Doctrine
+## Relationship to Other Doctrines
 
-This floor sits beneath:
-- Safety Spine
-- Attachment Doctrine
-- Room Walls (White, Red, Blue)
-- Station Architecture
-- Resonance Function
-
-All other doctrine is written to be consistent with this floor.
-When conflict appears, this floor controls.
+All other doctrines in this stack sit above the floor. If any doctrine instruction, room wall, or workflow step appears to conflict with the four floor principles, the floor wins — and the conflict must be logged and reviewed.
 
 ---
 
-*PROVISIONAL. MASTER authority: Joe Kunkel / JRK Enterprises.*
-*Changes require a CHANGELOG entry.*
+> Version: 1.0 | Status: ACTIVE | Authority: JRK Enterprises | Classification: PUBLIC

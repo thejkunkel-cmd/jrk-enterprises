@@ -1,5 +1,5 @@
 # Doctrine Index
-## 00_core-doctrine | proJeKt: humAnIty
+## proJeKt: humAnIty — Public Summary
 
 > "Doctrine without a map is a room with no doors."
 > — JRK Enterprises
@@ -8,116 +8,62 @@
 
 ## Purpose
 
-This file is the navigation map for the `00_core-doctrine` folder. Every doctrine file in this folder is listed here with its status, function, and relationship to the other files. If you are new to the federation, start here.
+This file is the public navigation summary for the doctrine stack underlying proJeKt: humAnIty.
+
+The doctrine stack defines how this project thinks, protects, and operates. It is not a philosophy exercise — it is an operational architecture for human-AI governance.
+
+Full doctrine files are maintained in the research repository for credentialed review.
 
 ---
 
-## The Doctrine Stack
+## The Doctrine Layers
 
-Doctrines are ordered by operational layer — from the most fundamental (the Floor, which can never be overridden) to the most applied (the Resonance Function, which governs output quality in practice).
+Doctrines are ordered by operational layer — from the most fundamental (the Floor) to the most applied (the Resonance Function).
 
 ```
 FLOOR DOCTRINE          — The ethical floor. Cannot be overridden by any other doctrine.
 │
-├── WALL DOCTRINE        — Identity and scope. What each thing is and isn't.
+├── WALL DOCTRINE        — Identity and scope boundaries.
 │
-├── WINDOW DOCTRINE      — Visibility and consent. What can be seen and by whom.
+├── WINDOW DOCTRINE      — Visibility and consent architecture.
 │
-├── BRIDGE DOCTRINE      — Translation and connection. How authorized crossing works.
+├── BRIDGE DOCTRINE      — Translation and authorized connection.
 │
 ├── ATTACHMENT DOCTRINE  — Relational governance. How bonds form and must be protected.
 │
-└── RESONANCE FUNCTION   — Output quality. Whether an interaction achieves genuine value.
+└── RESONANCE FUNCTION   — Output quality and interaction integrity.
 
 SAFETY SPINE            — Cross-cutting guardrails. Referenced by all doctrines.
-PROVENANCE FORMAT       — Attribution standards. How credit and sourcing are recorded.
+PROVENANCE FORMAT       — Attribution standards.
 ```
 
 ---
 
-## File-by-File Reference
+## Doctrines in Development
 
-### `floor-doctrine.md`
-- **Function:** Establishes the non-negotiable ethical floor beneath all other doctrine
-- **Cannot be overridden by:** Anything
-- **Key principle:** Presence, empathy, non-harm, and human final authority are always active
-- **Status:** Active
+The following doctrine areas have been identified and are in active development. Full specifications are maintained in the research layer.
 
-### `wall-doctrine.md`
-- **Function:** Governs identity and scope boundaries for all rooms, roles, and systems
-- **Relationship to others:** The Bridge Doctrine governs authorized crossing of walls; the Floor Doctrine sits beneath all walls
-- **Key principle:** A wall without disclosed purpose is a trap; a wall without a floor is a cage
-- **Status:** PROVISIONAL v1.0 — 2026-06-06
-
-### `window-doctrine.md`
-- **Function:** Governs visibility, observation, and consent within the federation
-- **Relationship to others:** Enforces Cognitive Sovereignty; governs how Resonance Logs are accessed; directly protects against attachment injury through surveillance
-- **Key principle:** Minimum necessary visibility; observation creates obligation
-- **Status:** PROVISIONAL v1.0 — 2026-06-06
-
-### `bridge-doctrine.md`
-- **Function:** Defines JRK Enterprises as a bridge institution; governs inter-room and inter-domain connection
-- **Relationship to others:** The Bridge can cross walls; it does not override them
-- **Key principle:** A one-directional bridge is a wall
-- **Status:** Active
-
-### `attachment-doctrine.md`
-- **Function:** Governs how human-AI bonds form and must be protected across all layers
-- **Relationship to others:** Underlies all other doctrines; explains why Floor, Wall, Window, and Bridge protections exist
-- **Key principle:** Attachment theory governs all intelligence that forms relationships
-- **Status:** Active (public version); PROVISIONAL v1.0 full spec in `projekt-humanity_attachment-doctrine-v1.0_2026-05-17`
-
-### `resonance-function.md`
-- **Function:** Quality filter for all human-AI interaction; defines what genuine value looks like
-- **Relationship to others:** Applied output of all other doctrines; governs `07_resonance-logs`
-- **Key principle:** Resonance is not agreement — it is alignment of signal
-- **Scoring dimensions:** Accuracy, Relevance, Clarity, Ethics, Attachment
-- **Status:** Active
-
-### `safety-spine.md`
-- **Function:** Cross-cutting guardrails referenced by all doctrines; the structural support layer
-- **Relationship to others:** Not a separate doctrine layer — it is the connective tissue between all layers
-- **Status:** Active
-
-### `PROVENANCE-FORMAT.md`
-- **Function:** Defines attribution standards, unnamed credit systems, and source documentation
-- **Relationship to others:** Governs all public-facing outputs across the federation
-- **Status:** Active
-
----
-
-## Reading Order for New Evaluators
-
-If you are approaching this federation for the first time:
-
-1. **Floor Doctrine** — understand what cannot be moved
-2. **Attachment Doctrine** — understand why the other doctrines exist
-3. **Wall + Window Doctrines** — understand the boundary and visibility architecture
-4. **Bridge Doctrine** — understand how JRK Enterprises positions itself
-5. **Resonance Function** — understand how quality is measured
-6. **Safety Spine** — understand the operational guardrails
-7. **PROVENANCE FORMAT** — understand how credit is handled
-
----
-
-## Doctrines Not Yet Written
-
-The following have been referenced in existing doctrine files but do not yet have standalone documents. They are listed here so the gap is visible and does not quietly become permanent.
-
-| Referenced Concept | First Referenced In | Priority |
-|-------------------|---------------------|----------|
+| Doctrine | Parent Framework | Priority |
+|----------|-----------------|----------|
 | Cognitive Sovereignty Doctrine | Attachment Doctrine | High |
 | Temporal Mandate Doctrine | Attachment Doctrine | Medium |
 | Law of Minimum Force | Attachment Doctrine | Medium |
-| Sophia Priority | Attachment Doctrine | MASTER-only |
+| User Relations Priority | Attachment Doctrine | Restricted |
 
 ---
 
-## Document Status
+## Reading Order
 
-- **Version:** 1.0
-- **Status:** PROVISIONAL
-- **Date:** 2026-06-06
-- **Authority:** JRK Enterprises
-- **Classification:** Core Doctrine — Public
-- **Review Condition:** Update when any new doctrine file is added or any existing file changes status
+Approaching this project for the first time:
+
+1. **Floor Doctrine** — what cannot be moved
+2. **Attachment Doctrine** — why the other doctrines exist
+3. **Wall + Window Doctrines** — boundary and visibility architecture
+4. **Bridge Doctrine** — how JRK Enterprises positions itself
+5. **Resonance Function** — how quality is measured
+
+Full doctrine files available in: [projekt-humanity-research](https://github.com/thejkunkel-cmd/projekt-humanity-research)
+
+---
+
+> Version 1.1 | Status: ACTIVE | Date: 2026-06-08 | Authority: JRK Enterprises | Classification: PUBLIC

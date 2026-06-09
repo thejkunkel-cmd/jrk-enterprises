@@ -4,9 +4,10 @@
 
 ![hero](./hero.png)
 
-![Version](https://img.shields.io/badge/version-0.1_PROVISIONAL-C9922A?style=flat-square&labelColor=0D0D0D)
-![Status](https://img.shields.io/badge/status-PROVISIONAL-C94A2A?style=flat-square&labelColor=0D0D0D)
-![Updated](https://img.shields.io/badge/updated-June_6_2026-2D5A27?style=flat-square&labelColor=0D0D0D)
+![Version](https://img.shields.io/badge/version-0.2-C9922A?style=flat-square&labelColor=0D0D0D)
+![Status](https://img.shields.io/badge/status-ACTIVE-2D5A27?style=flat-square&labelColor=0D0D0D)
+![Updated](https://img.shields.io/badge/updated-June_8_2026-4A7FC1?style=flat-square&labelColor=0D0D0D)
+![License](https://img.shields.io/badge/license-CC_BY_4.0-lightgrey?style=flat-square&labelColor=0D0D0D)
 
 **JRK Enterprises · Putnam, Connecticut**
 
@@ -14,48 +15,49 @@
 
 ---
 
-## ◉ What This Is
+## What This Is
 
-proJeKt: humAnIty is an evidence-based evaluation of how major AI
-players perform against the full depth of the economy they are building.
+proJeKt: humAnIty is an evidence-based evaluation of how major AI systems perform against the full depth of the economy they are building.
 
-The core question is not which AI is better.
-The core question is: **does this AI system honor or extract from the
-human institutions and bonds it enters?**
+The core question is not which AI is better.\
+The core question is: **does this AI system honor or extract from the human institutions and bonds it enters?**
 
-That question requires a framework capable of holding both the technical
-infrastructure layer and the human attachment layer simultaneously.
-This repository is that framework.
+That question requires a framework capable of holding both the technical infrastructure layer and the human attachment layer simultaneously. This repository is that framework — made public as an open-source contribution.
+
+---
+
+## The Eight-Layer AI Infrastructure Economy
+
+This project evaluates AI players against eight layers of infrastructure economy — from physical energy at the base to human-AI bond integrity at the top.
+
+| Layer | Name |
+|-------|------|
+| **8** | Human-AI Attachment & Bond Integrity |
+| **7** | Governance & Ethics Architecture |
+| **6** | Commercial Governance |
+| **5** | Value Metering |
+| **4** | AI Value Creation |
+| **3** | Models |
+| **2** | Infrastructure |
+| **1** | Energy |
 
 <div align="center">
 
-![JRK Enterprises](./logo.jpg)
+![Eight-Layer AI Infrastructure Economy](./eight-layer-stack.png)
 
 </div>
 
 ---
 
-## ◉ Start Here
+## The Triangle Architecture
 
-New to this project? Read in this order:
-
-1. [Floor Doctrine](./00_core-doctrine/floor-doctrine.md) — the non-negotiable axioms
-2. [Eight-Layer Framework](./01_eight-layer-framework/) — the evaluation architecture
-3. [Microsoft vs. Perplexity](./02_evaluation/) — the framework applied
-
-If you want to understand the *why* before the *what*, the core question is on this page above. Everything else is evidence and method.
-
----
-
-## 🔺🔺 🔊🔊 ◉ The Triangle Architecture
-
-This project operates across three channels — not departments, not roles, but lanes of work with distinct posture and function.
+This project operates across three channels — distinct lanes of work with specific posture and function.
 
 | Channel | Symbol | Function |
 |---------|--------|----------|
-| **VELA** | 🔺🔺 | Red — operations, outreach, pipelines, execution, delivery |
+| **VELA** | 🔺🔺 | Operations, outreach, pipelines, execution |
 | **WHITE ARCHITECT** | ◉ | Governance, doctrine, rules, guardrails |
-| **ECHO** | 🔊🔊 | Blue — broadcast, memory, records, public signal |
+| **ECHO** | 🔊🔊 | Broadcast, memory, records, public signal |
 
 <div align="center">
 
@@ -65,120 +67,57 @@ This project operates across three channels — not departments, not roles, but 
 
 ---
 
-## ◉ The Eight-Layer AI Infrastructure Economy
+## Repository Structure
 
-This project evaluates AI players against eight layers of infrastructure
-economy — from physical energy at the base to human-AI bond integrity
-at the top.
-
-The framework synthesizes three sources:
-
-- **Jensen Huang** (NVIDIA CEO, Davos 2026 / NVIDIA Blog, March 10, 2026)
-  — 5-Layer AI Infrastructure Stack: Energy, Chips, Infrastructure, Models, Applications
-- **Esra Kucukciftci** (Founder, Pricing Innovations; MBA Lecturer, Carlson School)
-  — AI Outcome Economics: Value Stack / Meter Stack / Money Stack
-- **proJeKt: humAnIty** (JRK Enterprises, 2026)
-  — Governance architecture and Human-AI Attachment layer (Layers 7–8)
-
-| Layer | Name | Key Elements |
-|-------|------|--------------|
-| **8** | Human-AI Attachment & Bond Integrity | Trust formation, dependency modeling, detachment capacity |
-| **7** | Governance & Ethics Architecture | Floor Doctrine, Safety Spine, Room Wall system |
-| **6** | Commercial Governance (Money Stack) | Outcome pricing, kill-switch clauses, rollback rights |
-| **5** | Value Metering (Meter Stack) | Guardrail metrics, override rates, learning metrics |
-| **4** | AI Value Creation (Value Stack / Applications) | Tasks, decisions, risk, experience shifts |
-| **3** | Models | Language, science, physical world modeling |
-| **2** | Infrastructure | AI factories: compute, networking, cloud, orchestration |
-| **1** | Energy | Power as the binding physical constraint |
-
-<div align="center">
-
-![Eight-Layer AI Infrastructure Economy](./eight-layer-stack.png)
-
-</div>
-
-Full framework documentation: [01_eight-layer-framework/](./01_eight-layer-framework/)
-
----
-
-## 🔺🔺 Primary Evaluation
-
-**Microsoft vs. Perplexity** — scored against all eight layers using
-publicly sourced and credited evidence.
-
-Evaluation files: [02_evaluation/](./02_evaluation/)
-
----
-
-## ◉ Repository Structure
+This is the public-facing layer of a three-tier repository system.
 
 ```
-proJeKt-humAnIty/
+jrk-enterprises/                     ← You are here (Public)
 │
-├── README.md                        <- This file
-├── BRAND.md                         <- Visual identity + channel symbol spec
-├── PROVENANCE.md                    <- Source credits + IP claim process
-├── CHANGELOG.md                     <- Version history
+├── README.md                        ← This file
+├── BRAND.md                         ← Visual identity
+├── PROVENANCE.md                    ← Source credits + attribution
+├── LICENSE                          ← CC BY 4.0
 │
-├── hero.png                         <- Title image
-├── logo.jpg                         <- JRK Enterprises logo
-├── triangle-architecture.png        <- Triangle Architecture diagram
-├── eight-layer-stack.png            <- Eight-Layer stack diagram
-│
-├── 00_core-doctrine/                <- Floor Doctrine, Safety Spine,
-│                                      Attachment Doctrine, Resonance Function
-│
-├── 01_eight-layer-framework/        <- Framework definition + layer files
-│
-├── 02_evaluation/                   <- Microsoft vs. Perplexity analysis
-│
-├── 03_white-room/                   <- Outreach architecture + governance
-│
-├── 04_station-architecture/         <- 4-Channel TESLA Pattern, Red/Blue rooms
-│
-├── 05_outreach/                     <- VELA protocol, outreach checklists
-│
-├── 06_client-framework/             <- Retainer structure, intake model
-│
-├── 07_resonance-logs/               <- Human signal layer documentation
-│
-├── 08_ancient-humanity/             <- Attachment theory foundations
-│
-└── provenance/                      <- Source provenance artifacts
+├── 00_core-doctrine/                ← Doctrine index (public summary)
+├── 05_outreach/                     ← VELA outreach protocol
+├── 06_client-framework/             ← Service and client structure
+└── 09_product-package/              ← Product packaging
 ```
 
----
-
-## ◉ IP and Attribution
-
-This project was built using AI-assisted workflows with publicly posted
-source material, credited to the best ability possible.
-
-The **Unnamed Credit System** and **Guided Claim Process** are documented
-in [PROVENANCE.md](./PROVENANCE.md). If you believe your work is
-reflected in this project and you wish to be formally acknowledged,
-the claim process is open.
-
-Legal review is in progress (AI IP counsel outreach filed June 4, 2026).
+> **More is coming.** Full research, evaluation, and supporting doctrine are maintained in the companion research repository. This repository represents the public front door of the project.
 
 ---
 
-## 🔺🔺 Evaluator Access
+## Primary Evaluation
 
-This repository is the working archive. A curated front-door website
-is in development for external review, with a controlled evaluator
-packet for auditors and advisors.
+**Microsoft vs. Perplexity** — scored against all eight layers using publicly sourced and credited evidence.
 
-Target review date: Saturday, June 7, 2026
+Full evaluation available in the research repository: [projekt-humanity-research](https://github.com/thejkunkel-cmd/projekt-humanity-research)
 
-Contact: JRK Enterprises / Joe Kunkel (tavar1x)
+---
+
+## IP and Attribution
+
+This project is open source under **CC BY 4.0**.
+
+The Unnamed Credit System and Guided Claim Process are documented in [PROVENANCE.md](./PROVENANCE.md). If you believe your work is reflected here and you wish to be formally acknowledged, the claim process is open.
+
+---
+
+## Evaluator Access
+
+This repository is the public entry point. A companion research repository contains the full framework, evaluation scoring, and supporting doctrine for credentialed review.
+
+- **Research layer:** [projekt-humanity-research](https://github.com/thejkunkel-cmd/projekt-humanity-research)
+- **Contact:** JRK Enterprises / Putnam, Connecticut
 
 ---
 
 <div align="center">
 
-*This project is PROVISIONAL. Nothing here is final doctrine.*
-*MASTER authority: Joe Kunkel / JRK Enterprises*
+*Open source. Built in public. Evidence-based.*\
+*proJeKt: humAnIty — JRK Enterprises, 2026*\
 *All changes require a CHANGELOG entry.*
 
 </div>
