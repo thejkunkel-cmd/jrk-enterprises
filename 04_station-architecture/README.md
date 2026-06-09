@@ -1,60 +1,15 @@
 # 04_station-architecture
-## proJeKt: humAnIty | Station Architecture
 
-> "A station is not a destination. It is a designed place of passage."
-> — JRK Enterprises
+**What this is:** The Station Architecture — the pattern-level map for how outreach and media work is organized.
 
----
+**The three stations:**
 
-## Purpose
+| Station | Name | Function |
+|---------|------|----------|
+| Lighthouse | White Architect | Governance, trust layer, doctrine-adjacent work |
+| Control Room | VELA (Red) | Operations — DMs, pitches, proposals, CRM, contracts |
+| Blue Room | ECHO (Blue) | Broadcast — posts, comments, public narrative signal |
 
-The Station Architecture folder defines the structural design patterns for how JRK Enterprises deploys AI infrastructure within client and partner environments. It draws from the Red/Blue station model and the TESLA pattern framework.
+**Why it matters:** These lanes are kept separate by design. Each has a distinct posture, voice, and set of rules. Collapsing them produces drift — governance language showing up in sales pitches, or sales urgency showing up in doctrine.
 
----
-
-## The Red/Blue Station Model
-
-**Red Stations** are environments of active pressure testing:
-- Challenge assumptions
-- Stress-test AI outputs
-- Simulate adversarial conditions
-- Identify failure modes before deployment
-
-**Blue Stations** are environments of constructive deployment:
-- Apply validated frameworks
-- Build toward stable human-AI partnership
-- Monitor for resonance
-- Support ongoing refinement
-
-Red and Blue stations work in rotation. No framework should be deployed Blue until it has survived Red.
-
----
-
-## The TESLA Pattern
-
-TESLA is a workflow architecture for AI-augmented human organizations:
-
-- **T** — Trigger: What initiates the workflow
-- **E** — Evaluate: Apply the Eight-Layer framework
-- **S** — Select: Choose the appropriate AI tool and approach
-- **L** — Loop: Iterate with human review at each cycle
-- **A** — Archive: Log outputs with full provenance
-
----
-
-## File Index
-
-*Station architecture documents will be added as frameworks are finalized.*
-
-- [red-station.md](./red-station.md) — Red station protocol (coming)
-- [blue-station.md](./blue-station.md) — Blue station protocol (coming)
-- [tesla-pattern.md](./tesla-pattern.md) — TESLA workflow framework (coming)
-
----
-
-## Document Status
-
-- **Version:** 1.0
-- **Status:** Active — Scaffold
-- **Last Modified:** 2025
-- **Authority:** JRK Enterprises
+**What belongs here:** Station architecture definition files, lane maps, posture guidelines, inter-station routing rules.

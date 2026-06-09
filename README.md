@@ -15,20 +15,23 @@
 
 ---
 
-## What This Is
+## Start Here
 
-proJeKt: humAnIty is an evidence-based evaluation of how major AI systems perform against the full depth of the economy they are building.
+proJeKt: humAnIty is an evidence-based framework for governing human-AI relationships. It was built around one question:
 
-The core question is not which AI is better.\
-The core question is: **does this AI system honor or extract from the human institutions and bonds it enters?**
+> **Does this AI system honor or extract from the human institutions and bonds it enters?**
 
-That question requires a framework capable of holding both the technical infrastructure layer and the human attachment layer simultaneously. This repository is that framework — made public as an open-source contribution.
+That question requires a framework capable of holding both the technical infrastructure layer and the human attachment layer at the same time. This repository is that framework — made public as an open-source contribution.
+
+This repo is the **public front door**. The full research and doctrine archive lives in the companion repository: [projekt-humanity-research](https://github.com/thejkunkel-cmd/projekt-humanity-research).
 
 ---
 
-## The Eight-Layer AI Infrastructure Economy
+## The Core Idea in Plain Language
 
-This project evaluates AI players against eight layers of infrastructure economy — from physical energy at the base to human-AI bond integrity at the top.
+Every AI system that interacts with humans is operating inside a relationship. Relationships have obligations. This project defines what those obligations are, tests whether AI systems are meeting them, and builds governance architecture to enforce them.
+
+The framework has eight layers — from physical energy infrastructure at the base to human-AI bond integrity at the top. Most AI governance stops at Layer 6 or 7. This framework goes to Layer 8.
 
 | Layer | Name |
 |-------|------|
@@ -49,15 +52,43 @@ This project evaluates AI players against eight layers of infrastructure economy
 
 ---
 
-## The Triangle Architecture
+## How This Repo Is Organized
 
-This project operates across three channels — distinct lanes of work with specific posture and function.
+```
+jrk-enterprises/
+│
+├── 00_core-doctrine/       ← Summary of the doctrine stack (full version in research repo)
+├── 01_eight-layer-framework/ ← The evaluation framework itself
+├── 02_evaluation/          ← Scored evaluations of AI systems
+├── 03_white-room/          ← Governance and trust layer operations
+├── 04_station-architecture/ ← Lighthouse / Control Room / Blue Room map
+├── 05_outreach/            ← Outreach protocols (VELA channel)
+├── 06_client-framework/    ← Client service structure
+├── 07_resonance-logs/      ← Session quality records
+├── 08_ancient-humanity/    ← Historical and philosophical source material
+├── 09_product-package/     ← Product and pitch materials
+├── 10_session-logs/        ← Working session records
+├── provenance/             ← Attribution records and credit documentation
+│
+├── BRAND.md                ← Visual identity
+├── PROVENANCE.md           ← Source credits and attribution
+├── CHANGELOG.md            ← All changes logged here
+└── LICENSE                 ← CC BY 4.0
+```
 
-| Channel | Symbol | Function |
-|---------|--------|----------|
-| **VELA** | 🔺🔺 | Operations, outreach, pipelines, execution |
-| **WHITE ARCHITECT** | ◉ | Governance, doctrine, rules, guardrails |
-| **ECHO** | 🔊🔊 | Broadcast, memory, records, public signal |
+Each folder has its own README. Open any folder to see what’s in it and why.
+
+---
+
+## The Three Channels
+
+This project operates across three distinct lanes of work.
+
+| Channel | Function |
+|---------|----------|
+| **VELA** (Operations) | Outreach, pipelines, execution, CRM |
+| **WHITE ARCHITECT** (Governance) | Doctrine, rules, trust layer, guardrails |
+| **ECHO** (Broadcast) | Public posts, narrative signal, memory |
 
 <div align="center">
 
@@ -67,73 +98,44 @@ This project operates across three channels — distinct lanes of work with spec
 
 ---
 
-## Repository Structure
+## Research Repository
 
-This is the public-facing layer of a three-tier repository system.
+The companion repository holds everything that supports this framework at depth.
 
-```
-jrk-enterprises/                     ← You are here (Public)
-│
-├── README.md                        ← This file
-├── BRAND.md                         ← Visual identity
-├── PROVENANCE.md                    ← Source credits + attribution
-├── LICENSE                          ← CC BY 4.0
-│
-├── 00_core-doctrine/                ← Doctrine index (public summary)
-├── 05_outreach/                     ← VELA outreach protocol
-├── 06_client-framework/             ← Service and client structure
-└── 09_product-package/              ← Product packaging
-```
+🔗 [projekt-humanity-research](https://github.com/thejkunkel-cmd/projekt-humanity-research)
 
-> **More is coming.** Full research, evaluation, and supporting doctrine are maintained in the companion research repository. This repository represents the public front door of the project.
+| Folder | Contents |
+|--------|----------|
+| `00_core-doctrine/` | Full doctrine stack — Floor, Wall, Window, Bridge, Attachment, Resonance, Safety Spine |
+| `11_research/` | Source briefs, red team reports, theoretical foundations, stress tests |
+| `12_analysis/` | Applied analysis, scored outputs, anomaly log |
+| `13_reflection/` | Field notes and open observation threads |
+
+Material moves from the research repo to this public repo only after MASTER review.
 
 ---
 
-## Primary Evaluation
+## For Evaluators and Funders
 
-**Microsoft vs. Perplexity** — scored against all eight layers using publicly sourced and credited evidence.
+If you’re here to assess the project:
 
-Full evaluation available in the research repository: [projekt-humanity-research](https://github.com/thejkunkel-cmd/projekt-humanity-research)
+1. Read this README
+2. Go to [projekt-humanity-research/DOCTRINE-INDEX.md](https://github.com/thejkunkel-cmd/projekt-humanity-research/blob/main/DOCTRINE-INDEX.md) for the full doctrine map
+3. Request confidential documents directly — contact JRK Enterprises, Putnam, Connecticut
 
----
-
-## Research Repository — What Lives There
-
-The companion repository [`projekt-humanity-research`](https://github.com/thejkunkel-cmd/projekt-humanity-research) holds everything that supports this framework but is not yet cleared for general release.
-
-| Folder | What It Contains |
-|---|---|
-| `00_core-doctrine/` | Full doctrine stack — Floor, Wall, Window, Bridge, Safety Spine, Attachment, Resonance, Librarian |
-| `07_resonance-logs/` | Live session records and pattern tracking |
-| `11_research/` | Source briefs, red team reports, BSG stress test, theoretical foundations |
-| `12_analysis/` | Applied analysis, behavioral patterns, scored outputs |
-| `13_reflection/` | Anomaly logs and field notes |
-
-Material is promoted from the research repo to this public repo only after MASTER review. If you are a credentialed reviewer, evaluator, or funder requesting full access, use the contact below.
+Research is unfinished due to resource limitations. The index is an honest map of where the work stands.
 
 ---
 
 ## IP and Attribution
 
-This project is open source under **CC BY 4.0**.
-
-The Unnamed Credit System and Guided Claim Process are documented in [PROVENANCE.md](./PROVENANCE.md). If you believe your work is reflected here and you wish to be formally acknowledged, the claim process is open.
-
----
-
-## Evaluator Access
-
-This repository is the public entry point. A companion research repository contains the full framework, evaluation scoring, and supporting doctrine for credentialed review.
-
-- **Research layer:** [projekt-humanity-research](https://github.com/thejkunkel-cmd/projekt-humanity-research)
-- **Contact:** JRK Enterprises / Putnam, Connecticut
+Open source under **CC BY 4.0**. The Unnamed Credit System and Guided Claim Process are documented in [PROVENANCE.md](./PROVENANCE.md).
 
 ---
 
 <div align="center">
 
 *Open source. Built in public. Evidence-based.*\
-*proJeKt: humAnIty — JRK Enterprises, 2026*\
-*All changes require a CHANGELOG entry.*
+*proJeKt: humAnIty — JRK Enterprises, 2026*
 
 </div>

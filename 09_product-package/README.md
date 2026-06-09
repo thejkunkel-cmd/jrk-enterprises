@@ -1,58 +1,9 @@
 # 09_product-package
 
-## proJeKt: humAnIty | Product Package
+**What this is:** Product and pitch materials — the packaged version of the framework for external audiences.
 
-> "The package is not the product. The product is the framework. The package is how the world receives it." — JRK Enterprises
+**Function:** Takes the intellectual and operational work of the project and translates it into formats suitable for funders, partners, media, and the general public.
 
----
+**What belongs here:** One-pagers, pitch decks, executive summaries, product descriptions, and any materials intended for external distribution.
 
-## Purpose
-
-This folder contains the product packaging layer for proJeKt: humAnIty — the structured presentation of the framework for external audiences including evaluators, funders, institutional partners, and clients.
-
-Content here translates the internal framework into forms that outside parties can receive, evaluate, and act on. It does not replace or simplify the framework — it surfaces it clearly.
-
----
-
-## What Lives Here
-
-| File | Function | Status |
-|---|---|---|
-| [PRODUCT-PACKAGE.md](./PRODUCT-PACKAGE.md) | Core product package document — full external presentation | Active |
-
----
-
-## Relationship to Other Folders
-
-- **Sources from:** `00_core-doctrine/`, `01_eight-layer-framework/`, `02_evaluation/`
-- **Feeds into:** External evaluator packets, funding applications, partnership briefs
-- **Governed by:** Wall Doctrine (scope), Bridge Doctrine (cross-room transfer rules)
-
-Content in this folder is cleared for external review unless explicitly marked otherwise. All attribution follows the Unnamed Credit System in `PROVENANCE.md`.
-
----
-
-## Usage
-
-When preparing materials for an external audience:
-1. Start with `PRODUCT-PACKAGE.md` as the base document
-2. Confirm all attribution is compliant with `00_core-doctrine/PROVENANCE-FORMAT.md`
-3. Log any new external distribution in `PROVENANCE.md` at the root level
-4. Add a CHANGELOG entry for any modification
-
----
-
-## Governance
-
-- **Authority:** Joe Kunkel / JRK Enterprises (MASTER)
-- **Sensitivity:** OPEN — cleared for external evaluator view
-- **Modification:** CHANGELOG entry required for every change
-
----
-
-## Document Status
-
-- **Version:** 1.0
-- **Status:** Active
-- **Last Modified:** June 9, 2026
-- **Authority:** JRK Enterprises
+**Guardrail:** Product materials must accurately represent the state of the research. Claims about the framework’s completeness or validation status must match the actual status documented in [`DOCTRINE-INDEX.md`](https://github.com/thejkunkel-cmd/projekt-humanity-research/blob/main/DOCTRINE-INDEX.md). No overclaiming.

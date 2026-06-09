@@ -1,28 +1,9 @@
-# 06 | Client Framework
+# 06_client-framework
 
-## proJeKt: humAnIty
+**What this is:** The service and client structure for JRK Enterprises.
 
----
+**Function:** Defines how client relationships are structured, what services are offered, and how the framework’s principles are translated into deliverables for paying clients.
 
-> *The client engagement framework is in active development.*
+**What belongs here:** Service definitions, engagement models, client onboarding materials, pricing frameworks, and project scoping templates.
 
----
-
-## Client Phase Pricing
-
-**Coming soon.**
-
-JRK Enterprises operates on a phased engagement model designed to meet organizations and individuals where they are — regardless of budget, size, or sector.
-
-Engagement structures include community-accessible tiers, organizational partnerships, and institutional frameworks.
-
-Details will be published here as the model is finalized.
-
----
-
-*For inquiries, contact JRK Enterprises directly.*
-
----
-
-**Status:** Active Development
-**Authority:** JRK Enterprises
+**Relationship to doctrine:** Client work is governed by the Floor Doctrine and Attachment Doctrine. Any client engagement that would require violating either is declined. This is not negotiable.

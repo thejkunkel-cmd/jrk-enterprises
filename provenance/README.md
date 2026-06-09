@@ -1,18 +1,9 @@
-# /provenance
+# provenance
 
-This folder holds attribution and sourcing records for all external research,
-theoretical frameworks, and organizational influences cited in proJeKt: humAnIty.
+**What this is:** Attribution records and credit documentation for proJeKt: humAnIty.
 
-## Structure
+**Function:** Every idea, framework, or research thread in this project that draws on prior work — named or unnamed — is documented here. This folder is the operational implementation of the Provenance Format standard.
 
-| Subfolder | Contents |
-|---|---|
-| `/supporting-evidence/` | Deep research outputs mapped to the eight-layer framework |
-| `/theoretical-sources/` | Academic, preprint, and peer-reviewed citations |
-| `/organizational-influences/` | Companies, labs, and projects that informed the architecture |
+**The Unnamed Credit System:** Some contributors to the intellectual foundation of this project have not given permission to be named publicly. The Unnamed Credit System ensures their contribution is acknowledged accurately without violating that boundary. The Guided Claim Process is open to anyone who believes their work is reflected here and wishes to be formally acknowledged.
 
-## Rules
-- Every file carries: source name, URL, date accessed, claims drawn, layer mapping, gap statement
-- Status tags: PROVISIONAL / VALIDATED / FINAL
-- Classification: OPEN / INTERNAL / SENSITIVE / RESTRICTED
-- No raw thread dumps — all files must be digest-formatted before committing
+**Full provenance standard:** See [`PROVENANCE.md`](../PROVENANCE.md) at the root of this repository.
