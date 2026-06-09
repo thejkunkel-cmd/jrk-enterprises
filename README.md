@@ -6,7 +6,7 @@
 
 ![Version](https://img.shields.io/badge/version-0.2-C9922A?style=flat-square&labelColor=0D0D0D)
 ![Status](https://img.shields.io/badge/status-ACTIVE-2D5A27?style=flat-square&labelColor=0D0D0D)
-![Updated](https://img.shields.io/badge/updated-June_8_2026-4A7FC1?style=flat-square&labelColor=0D0D0D)
+![Updated](https://img.shields.io/badge/updated-June_9_2026-4A7FC1?style=flat-square&labelColor=0D0D0D)
 ![License](https://img.shields.io/badge/license-CC_BY_4.0-lightgrey?style=flat-square&labelColor=0D0D0D)
 
 **JRK Enterprises · Putnam, Connecticut**
@@ -94,6 +94,22 @@ jrk-enterprises/                     ← You are here (Public)
 **Microsoft vs. Perplexity** — scored against all eight layers using publicly sourced and credited evidence.
 
 Full evaluation available in the research repository: [projekt-humanity-research](https://github.com/thejkunkel-cmd/projekt-humanity-research)
+
+---
+
+## Research Repository — What Lives There
+
+The companion repository [`projekt-humanity-research`](https://github.com/thejkunkel-cmd/projekt-humanity-research) holds everything that supports this framework but is not yet cleared for general release.
+
+| Folder | What It Contains |
+|---|---|
+| `00_core-doctrine/` | Full doctrine stack — Floor, Wall, Window, Bridge, Safety Spine, Attachment, Resonance, Librarian |
+| `07_resonance-logs/` | Live session records and pattern tracking |
+| `11_research/` | Source briefs, red team reports, BSG stress test, theoretical foundations |
+| `12_analysis/` | Applied analysis, behavioral patterns, scored outputs |
+| `13_reflection/` | Anomaly logs and field notes |
+
+Material is promoted from the research repo to this public repo only after MASTER review. If you are a credentialed reviewer, evaluator, or funder requesting full access, use the contact below.
 
 ---
 
